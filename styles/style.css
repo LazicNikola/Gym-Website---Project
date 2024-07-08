@@ -7,4 +7,69 @@
 
 html {
   font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+  background-color: hsl(180, 12%, 8%);
+  padding: 3% 7%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(180, 4%, 98%);
+}
+header nav .logo {
+  display: flex;
+  align-items: center;
+}
+header nav .logo img {
+  width: 12%;
+  height: 80%;
+  margin-right: 3%;
+}
+header nav .logo p {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+header nav .logo p:hover {
+  cursor: pointer;
+}
+header nav .nav-menu {
+  display: flex;
+  width: 60%;
+}
+header nav .nav-menu ul {
+  display: flex;
+  width: 80%;
+  gap: 15%;
+}
+header nav .nav-menu ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+header nav .nav-menu ul li a {
+  text-decoration: none;
+  color: hsl(180, 4%, 98%);
+}
+header nav .nav-menu ul li a:hover {
+  color: hsl(79, 72%, 55%);
+  transition: ease-out 0.15s;
+}
+header nav .nav-menu button {
+  all: unset;
+  background-color: white;
+  color: hsl(180, 4%, 12%);
+  font-weight: 800;
+  padding: 2% 2%;
+  width: 19%;
+  text-align: center;
+  border-radius: 3px;
+}
+header nav .nav-menu button:hover {
+  cursor: pointer;
+  background-color: hsl(79, 72%, 55%);
+  transition: ease-out 0.2s;
 }/*# sourceMappingURL=style.css.map */
