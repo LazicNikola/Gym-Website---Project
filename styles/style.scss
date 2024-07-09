@@ -1,16 +1,33 @@
 @use "global";
 
+@mixin button {
+  all: unset;
+  color: black;
+  font-weight: 800;
+  text-align: center;
+  padding: 0.9rem 0.9rem;
+  width: 8.2rem;
+  border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+    transition: ease-out 0.2s;
+  }
+}
+
 body {
   background-color: global.$body-color;
   padding: 3% 7%;
 }
 
 header {
+  height: 110vh;
+  position: relative;
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: global.$title-color;
+    margin-bottom: 8%;
     .logo {
       display: flex;
       align-items: center;
@@ -49,20 +66,67 @@ header {
         }
       }
       button {
-        all: unset;
+        @include button;
         background-color: white;
-        color: global.$title-color-black;
-        font-weight: 800;
-        padding: 2% 2%;
-        width: 19%;
-        text-align: center;
-        border-radius: 3px;
         &:hover {
-          cursor: pointer;
           background-color: global.$first-color;
-          transition: ease-out 0.2s;
         }
       }
     }
+  }
+}
+
+header {
+  .home {
+    display: flex;
+    justify-content: space-between;
+    .home-left {
+      width: 55%;
+      z-index: 2;
+      h1 {
+        width: 100%;
+        color: global.$title-color;
+        font-weight: 900;
+        font-size: 5.8rem;
+        margin-bottom: 4%;
+        span {
+          font-size: 3.6rem;
+          -webkit-text-stroke: 0.05rem global.$title-color;
+          color: transparent;
+        }
+      }
+      p {
+        color: global.$text-color;
+        width: 70%;
+        line-height: 1.5rem;
+        margin-bottom: 8%;
+      }
+      button {
+        @include button;
+        background-color: global.$first-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+    .home-right {
+      width: 60%;
+      height: 80%;
+      position: absolute;
+      right: -8%;
+      bottom: 0;
+    }
+  }
+}
+header {
+  .triangle {
+    background-color: global.$first-color-dark;
+    width: 70%;
+    height: 150%;
+    position: absolute;
+    z-index: -1;
+    right: -8.18%;
+    bottom: 0;
+    clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
   }
 }
