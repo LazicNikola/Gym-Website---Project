@@ -11,19 +11,22 @@ html {
 
 body {
   background-color: hsl(180, 12%, 8%);
-  padding: 3% 7%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 header {
-  height: 110vh;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 4;
 }
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: hsl(180, 4%, 98%);
-  margin-bottom: 8%;
+  margin-bottom: 6%;
+  padding: 1% 7%;
 }
 header nav .logo {
   display: flex;
@@ -81,33 +84,41 @@ header nav .nav-menu button:hover {
   background-color: hsl(79, 72%, 55%);
 }
 
-header .home {
-  display: flex;
-  justify-content: space-between;
+main {
+  padding: 0 7%;
+  width: 100%;
 }
-header .home .home-left {
+main .home {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+}
+main .home .home-left {
   width: 55%;
+  height: 100%;
   z-index: 2;
 }
-header .home .home-left h1 {
-  width: 100%;
+main .home .home-left h1 {
   color: hsl(180, 4%, 98%);
+  width: 100%;
   font-weight: 900;
   font-size: 5.8rem;
   margin-bottom: 4%;
 }
-header .home .home-left h1 span {
-  font-size: 3.6rem;
+main .home .home-left h1 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
   color: transparent;
 }
-header .home .home-left p {
+main .home .home-left h1 span {
+  font-size: 3.6rem;
+}
+main .home .home-left p {
   color: hsl(180, 4%, 72%);
   width: 70%;
   line-height: 1.5rem;
   margin-bottom: 8%;
 }
-header .home .home-left button {
+main .home .home-left button {
   all: unset;
   color: black;
   font-weight: 800;
@@ -120,26 +131,109 @@ header .home .home-left button {
   align-items: center;
   justify-content: space-around;
 }
-header .home .home-left button:hover {
+main .home .home-left button:hover {
   cursor: pointer;
   transition: ease-out 0.2s;
 }
-header .home .home-right {
+main .home .home-right {
   width: 60%;
-  height: 80%;
+  height: 100%;
   position: absolute;
   right: -8%;
   bottom: 0;
 }
-
-header .triangle {
+main .home .home-right img {
+  width: 100%;
+  height: 100%;
+}
+main .home .home-right .triangle {
   background-color: hsl(79, 63%, 50%);
-  width: 70%;
-  height: 150%;
+  width: 125%;
+  height: 180%;
   position: absolute;
   z-index: -1;
-  right: -8.18%;
+  right: -3%;
   bottom: 0;
   -webkit-clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
           clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
+}
+
+main .partner-logo {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+main .partner-logo img {
+  width: 16%;
+}
+
+main .program h1 {
+  font-family: "Kaushan Script", cursive;
+  color: hsl(79, 72%, 55%);
+  font-weight: 500;
+  font-size: 2.4rem;
+  text-align: center;
+}
+main .program h2 {
+  color: hsl(180, 4%, 98%);
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 1% 0 7% 0;
+}
+main .program h2 span {
+  -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
+  color: transparent;
+}
+
+main .program {
+  margin-bottom: 5%;
+}
+main .program .program-types {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+}
+main .program .program-types div {
+  height: 100%;
+  background-color: hsl(180, 5%, 12%);
+  width: 22%;
+  padding: 2.8%;
+  border-radius: 3px;
+  position: relative;
+}
+main .program .program-types div:hover {
+  background-color: hsl(79, 72%, 55%);
+  cursor: pointer;
+  transition: all ease-out 0.15s;
+}
+main .program .program-types div:hover h3,
+main .program .program-types div:hover p {
+  color: hsl(180, 5%, 12%);
+}
+main .program .program-types div .program-image-container {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 3%;
+  background-color: hsl(82, 6%, 64%);
+  border-radius: 500px;
+  padding: 3%;
+}
+main .program .program-types div .program-image-container img {
+  width: 100%;
+}
+main .program .program-types div h3 {
+  color: hsl(180, 4%, 98%);
+  margin: 8% 0 10% 0;
+  font-size: 1.4rem;
+}
+main .program .program-types div p {
+  color: hsl(180, 4%, 72%);
+  height: 35%;
+  margin-bottom: 12%;
+  font-weight: 500;
+}
+main .program .program-types div .arrow-right-gray {
+  width: 12%;
+  position: absolute;
+  right: 10%;
 }/*# sourceMappingURL=style.css.map */

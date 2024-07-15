@@ -14,20 +14,31 @@
   }
 }
 
+@mixin white-heading {
+  color: global.$title-color;
+  span {
+    -webkit-text-stroke: 0.05rem global.$title-color;
+    color: transparent;
+  }
+}
+
 body {
   background-color: global.$body-color;
-  padding: 3% 7%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 header {
-  height: 110vh;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 4;
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: global.$title-color;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
+    padding: 1% 7%;
     .logo {
       display: flex;
       align-items: center;
@@ -76,23 +87,25 @@ header {
   }
 }
 
-header {
+main {
+  padding: 0 7%;
+  width: 100%;
   .home {
-    display: flex;
-    justify-content: space-between;
+    height: 90vh;
+    width: 100%;
+    position: relative;
     .home-left {
       width: 55%;
+      height: 100%;
       z-index: 2;
       h1 {
+        @include white-heading;
         width: 100%;
-        color: global.$title-color;
         font-weight: 900;
         font-size: 5.8rem;
         margin-bottom: 4%;
         span {
           font-size: 3.6rem;
-          -webkit-text-stroke: 0.05rem global.$title-color;
-          color: transparent;
         }
       }
       p {
@@ -111,22 +124,107 @@ header {
     }
     .home-right {
       width: 60%;
-      height: 80%;
+      height: 100%;
       position: absolute;
       right: -8%;
       bottom: 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .triangle {
+        background-color: global.$first-color-dark;
+        width: 125%;
+        height: 180%;
+        position: absolute;
+        z-index: -1;
+        right: -3%;
+        bottom: 0;
+        clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
+      }
     }
   }
 }
-header {
-  .triangle {
-    background-color: global.$first-color-dark;
-    width: 70%;
-    height: 150%;
-    position: absolute;
-    z-index: -1;
-    right: -8.18%;
-    bottom: 0;
-    clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
+
+main {
+  .partner-logo {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 0;
+    img {
+      width: 16%;
+    }
+  }
+}
+main {
+  .program {
+    h1 {
+      font-family: global.$second-font;
+      color: global.$first-color;
+      font-weight: 500;
+      font-size: 2.4rem;
+      text-align: center;
+    }
+    h2 {
+      @include white-heading;
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 1% 0 7% 0;
+    }
+  }
+}
+
+main {
+  .program {
+    margin-bottom: 5%;
+    .program-types {
+      display: flex;
+      justify-content: space-between;
+      height: 50vh;
+      div {
+        height: 100%;
+        background-color: global.$title-color-black;
+        width: 22%;
+        padding: 2.8%;
+        border-radius: 3px;
+        position: relative;
+        &:hover {
+          background-color: global.$first-color;
+          cursor: pointer;
+          h3,
+          p {
+            color: global.$title-color-black;
+          }
+          transition: all ease-out 0.15s;
+        }
+        .program-image-container {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 3%;
+          background-color: global.$first-color-gray;
+          border-radius: 500px;
+          padding: 3%;
+          img {
+            width: 100%;
+          }
+        }
+        h3 {
+          color: global.$title-color;
+          margin: 8% 0 10% 0;
+          font-size: 1.4rem;
+        }
+        p {
+          color: global.$text-color;
+          height: 35%;
+          margin-bottom: 12%;
+          font-weight: 500;
+        }
+        .arrow-right-gray {
+          width: 12%;
+          position: absolute;
+          right: 10%;
+        }
+      }
+    }
   }
 }
