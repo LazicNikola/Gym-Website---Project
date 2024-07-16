@@ -178,7 +178,7 @@ main .program h2 {
   color: hsl(180, 4%, 98%);
   text-align: center;
   font-size: 2.8rem;
-  margin: 1% 0 7% 0;
+  margin: 1% 0 5% 0;
 }
 main .program h2 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
@@ -186,7 +186,7 @@ main .program h2 span {
 }
 
 main .program {
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 main .program .program-types {
   display: flex;
@@ -228,12 +228,66 @@ main .program .program-types div h3 {
 }
 main .program .program-types div p {
   color: hsl(180, 4%, 72%);
-  height: 35%;
-  margin-bottom: 12%;
   font-weight: 500;
 }
 main .program .program-types div .arrow-right-gray {
   width: 12%;
   position: absolute;
   right: 10%;
+  bottom: 5%;
+}
+main .program .program-types div .arrow-right-gray:hover {
+  transform: translateX(40%);
+  transition: transform ease-out 0.15s;
+}
+
+main .choose-us {
+  height: 80vh;
+  display: flex;
+}
+main .choose-us .choose-us-left {
+  height: 100%;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+main .choose-us .choose-us-left img {
+  height: 100%;
+  margin-left: 11%;
+  z-index: 2;
+  position: inherit;
+}
+main .choose-us .choose-us-left .triangle-second {
+  background-color: hsl(79, 63%, 50%);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 85% 100%);
+          clip-path: polygon(0 0, 0% 100%, 85% 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140%;
+}
+
+main .choose-us .choose-us-right {
+  width: 50%;
+  height: 100%;
+  padding: 6% 0;
+}
+main .choose-us .choose-us-right h1 {
+  font-family: "Kaushan Script", cursive;
+  color: hsl(79, 72%, 55%);
+  font-weight: 500;
+}
+main .choose-us .choose-us-right h2 {
+  color: hsl(180, 4%, 98%);
+  font-size: 3rem;
+}
+main .choose-us .choose-us-right h2 span {
+  -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
+  color: transparent;
+}
+main .choose-us .choose-us-right p {
+  width: 75%;
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+  margin: 5% 0 8% 0;
 }/*# sourceMappingURL=style.css.map */

@@ -22,6 +22,12 @@
   }
 }
 
+@mixin green-heading {
+  font-family: global.$second-font;
+  color: global.$first-color;
+  font-weight: 500;
+}
+
 body {
   background-color: global.$body-color;
   overflow-x: hidden;
@@ -159,9 +165,7 @@ main {
 main {
   .program {
     h1 {
-      font-family: global.$second-font;
-      color: global.$first-color;
-      font-weight: 500;
+      @include green-heading;
       font-size: 2.4rem;
       text-align: center;
     }
@@ -169,14 +173,14 @@ main {
       @include white-heading;
       text-align: center;
       font-size: 2.8rem;
-      margin: 1% 0 7% 0;
+      margin: 1% 0 5% 0;
     }
   }
 }
 
 main {
   .program {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     .program-types {
       display: flex;
       justify-content: space-between;
@@ -215,15 +219,68 @@ main {
         }
         p {
           color: global.$text-color;
-          height: 35%;
-          margin-bottom: 12%;
           font-weight: 500;
         }
         .arrow-right-gray {
           width: 12%;
           position: absolute;
           right: 10%;
+          bottom: 5%;
+          &:hover {
+            transform: translateX(40%);
+            transition: transform ease-out 0.15s;
+          }
         }
+      }
+    }
+  }
+}
+
+main {
+  .choose-us {
+    height: 80vh;
+    display: flex;
+    .choose-us-left {
+      height: 100%;
+      width: 50%;
+      position: relative;
+      overflow: hidden;
+      img {
+        height: 100%;
+        margin-left: 11%;
+        z-index: 2;
+        position: inherit;
+      }
+      .triangle-second {
+        background-color: global.$first-color-dark;
+        clip-path: polygon(0 0, 0% 100%, 85% 100%);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 140%;
+      }
+    }
+  }
+}
+
+main {
+  .choose-us {
+    .choose-us-right {
+      width: 50%;
+      height: 100%;
+      padding: 6% 0;
+      h1 {
+        @include green-heading;
+      }
+      h2 {
+        @include white-heading;
+        font-size: 3rem;
+      }
+      p {
+        width: 75%;
+        color: global.$text-color;
+        font-weight: 500;
+        margin: 5% 0 8% 0;
       }
     }
   }
