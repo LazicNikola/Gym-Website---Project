@@ -1,5 +1,7 @@
 @use "global";
 
+// <==================== MIXINS ====================>
+
 @mixin button {
   all: unset;
   color: black;
@@ -28,11 +30,15 @@
   font-weight: 500;
 }
 
+// <============================= BODY =============================>
+
 body {
   background-color: global.$body-color;
   overflow-x: hidden;
   position: relative;
 }
+
+// <============================= HEADER =============================>
 
 header {
   position: sticky;
@@ -88,11 +94,17 @@ header {
         &:hover {
           background-color: global.$first-color;
         }
+        &:active {
+          background-color: white;
+          transition-duration: 0s;
+        }
       }
     }
   }
 }
 
+// <============================= MAIN =============================>
+// <==================== MAIN - HOME ====================>
 main {
   padding: 0 7%;
   width: 100%;
@@ -126,6 +138,16 @@ main {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        &:hover {
+          .arrow-right {
+            transform: translateX(40%);
+            transition: transform ease-out 0.15s;
+          }
+        }
+        &:active {
+          background-color: white;
+          transition-duration: 0s;
+        }
       }
     }
     .home-right {
@@ -152,6 +174,8 @@ main {
   }
 }
 
+// <==================== MAIN - PARTNER LOGO ====================>
+
 main {
   .partner-logo {
     display: flex;
@@ -162,6 +186,9 @@ main {
     }
   }
 }
+
+// <==================== MAIN - PROGRAM ====================>
+
 main {
   .program {
     h1 {
@@ -194,12 +221,11 @@ main {
         position: relative;
         &:hover {
           background-color: global.$first-color;
-          cursor: pointer;
           h3,
           p {
             color: global.$title-color-black;
           }
-          transition: all ease-out 0.15s;
+          transition: all ease-out 0.2s;
         }
         .program-image-container {
           width: 50px;
@@ -222,11 +248,16 @@ main {
           font-weight: 500;
         }
         .arrow-right-gray {
+          all: unset;
+          background-image: url("../img/arrow-right-gray.png");
+          background-size: cover;
           width: 12%;
+          height: 10%;
           position: absolute;
           right: 10%;
           bottom: 5%;
           &:hover {
+            cursor: pointer;
             transform: translateX(40%);
             transition: transform ease-out 0.15s;
           }
@@ -236,10 +267,13 @@ main {
   }
 }
 
+// <==================== MAIN - CHOOSE US ====================>
+
 main {
   .choose-us {
     height: 80vh;
     display: flex;
+    margin-bottom: 10%;
     .choose-us-left {
       height: 100%;
       width: 50%;
@@ -280,8 +314,54 @@ main {
         width: 75%;
         color: global.$text-color;
         font-weight: 500;
-        margin: 5% 0 8% 0;
+        margin: 5% 0;
       }
     }
+  }
+}
+
+main {
+  .choose-us {
+    .choose-us-right {
+      .achievements {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        row-gap: 5%;
+        div {
+          p {
+            width: 100%;
+            span {
+              font-family: global.$second-font;
+              font-size: 2rem;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// <========================= PRICING PAGE =========================>
+
+.pricing-page {
+  padding: 3% 7%;
+  h1 {
+    @include green-heading;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5%;
+  }
+  h2 {
+    @include white-heading;
+    text-align: center;
+    font-size: 2.8rem;
+  }
+}
+
+.pricing-page {
+  .packages {
+    display: flex;
   }
 }

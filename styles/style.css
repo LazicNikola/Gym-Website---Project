@@ -83,6 +83,10 @@ header nav .nav-menu button:hover {
 header nav .nav-menu button:hover {
   background-color: hsl(79, 72%, 55%);
 }
+header nav .nav-menu button:active {
+  background-color: white;
+  transition-duration: 0s;
+}
 
 main {
   padding: 0 7%;
@@ -134,6 +138,14 @@ main .home .home-left button {
 main .home .home-left button:hover {
   cursor: pointer;
   transition: ease-out 0.2s;
+}
+main .home .home-left button:hover .arrow-right {
+  transform: translateX(40%);
+  transition: transform ease-out 0.15s;
+}
+main .home .home-left button:active {
+  background-color: white;
+  transition-duration: 0s;
 }
 main .home .home-right {
   width: 60%;
@@ -203,8 +215,7 @@ main .program .program-types div {
 }
 main .program .program-types div:hover {
   background-color: hsl(79, 72%, 55%);
-  cursor: pointer;
-  transition: all ease-out 0.15s;
+  transition: all ease-out 0.2s;
 }
 main .program .program-types div:hover h3,
 main .program .program-types div:hover p {
@@ -231,12 +242,17 @@ main .program .program-types div p {
   font-weight: 500;
 }
 main .program .program-types div .arrow-right-gray {
+  all: unset;
+  background-image: url("../img/arrow-right-gray.png");
+  background-size: cover;
   width: 12%;
+  height: 10%;
   position: absolute;
   right: 10%;
   bottom: 5%;
 }
 main .program .program-types div .arrow-right-gray:hover {
+  cursor: pointer;
   transform: translateX(40%);
   transition: transform ease-out 0.15s;
 }
@@ -244,6 +260,7 @@ main .program .program-types div .arrow-right-gray:hover {
 main .choose-us {
   height: 80vh;
   display: flex;
+  margin-bottom: 10%;
 }
 main .choose-us .choose-us-left {
   height: 100%;
@@ -289,5 +306,45 @@ main .choose-us .choose-us-right p {
   width: 75%;
   color: hsl(180, 4%, 72%);
   font-weight: 500;
-  margin: 5% 0 8% 0;
+  margin: 5% 0;
+}
+
+main .choose-us .choose-us-right .achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  row-gap: 5%;
+}
+main .choose-us .choose-us-right .achievements div p {
+  width: 100%;
+}
+main .choose-us .choose-us-right .achievements div p span {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2rem;
+  color: white;
+}
+
+.pricing-page {
+  padding: 3% 7%;
+}
+.pricing-page h1 {
+  font-family: "Kaushan Script", cursive;
+  color: hsl(79, 72%, 55%);
+  font-weight: 500;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5%;
+}
+.pricing-page h2 {
+  color: hsl(180, 4%, 98%);
+  text-align: center;
+  font-size: 2.8rem;
+}
+.pricing-page h2 span {
+  -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
+  color: transparent;
+}
+
+.pricing-page .packages {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
