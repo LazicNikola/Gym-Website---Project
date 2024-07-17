@@ -146,7 +146,45 @@
       </div>
 
       <!--==================== CALCULATE ====================-->
-      <section class="calculate section"></section>
+      <div class="calculate">
+        <div class="calculate-left">
+          <h1><span>CALCULATE</span> YOUR BMI</h1>
+          <p>
+            The body mass index (BMI) calculator calculates body mass index from
+            your weight and height.
+          </p>
+          <form class="calculator">
+            <div class="calculator-container">
+              <div class="height">
+                <input
+                  type="number"
+                  placeholder="Height"
+                  id="height"
+                  name="height"
+                />
+                <label for="height">cm</label>
+              </div>
+              <div class="weight">
+                <input
+                  type="number"
+                  placeholder="Weight"
+                  id="weight"
+                  name="weight"
+                />
+                <label for="weight">kg</label>
+              </div>
+            </div>
+            <button type="submit">
+              Calculate Now
+              <img src="../img/arrow-right.svg" alt="arrow right" />
+            </button>
+          </form>
+          <p class="bmi-message"></p>
+        </div>
+        <div class="calculate-right">
+          <img src="../img/calculate-img.png" alt="female fitness model" />
+        </div>
+      </div>
     </main>
 
     <!--==================== FOOTER ====================-->

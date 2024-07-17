@@ -339,6 +339,7 @@ main .choose-us .choose-us-right .achievements div p span {
   color: hsl(180, 4%, 98%);
   text-align: center;
   font-size: 2.8rem;
+  margin-bottom: 8%;
 }
 .pricing-page h2 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
@@ -347,4 +348,238 @@ main .choose-us .choose-us-right .achievements div p span {
 
 .pricing-page .packages {
   display: flex;
+  justify-content: space-around;
+  height: 80vh;
+}
+.pricing-page .packages .basic {
+  width: 28%;
+  padding: 3% 4%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(180, 5%, 12%);
+}
+.pricing-page .packages .basic .pricing-image-container {
+  width: 50px;
+  height: 50px;
+  background-color: hsl(82, 6%, 64%);
+  padding: 4.5%;
+  border-radius: 500px;
+}
+.pricing-page .packages .basic .pricing-image-container img {
+  width: 100%;
+}
+.pricing-page .packages .basic h3 {
+  font-size: 1.3rem;
+}
+.pricing-page .packages .basic .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.pricing-page .packages .basic .offer {
+  margin: 10% 0 5% 0;
+}
+.pricing-page .packages .basic .offer p {
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 13%;
+  margin-bottom: 6%;
+  font-weight: 500;
+}
+.pricing-page .packages .basic button {
+  all: unset;
+  width: 100%;
+  background-color: hsl(180, 4%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(180, 5%, 12%);
+  height: 15%;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 5%;
+  border-radius: 3px;
+}
+.pricing-page .packages .basic button img {
+  width: 10%;
+}
+.pricing-page .packages .basic button:hover {
+  cursor: pointer;
+}
+.pricing-page .packages .basic button:hover img {
+  transform: translateX(50%);
+  transition: transform ease-out 0.15s;
+}
+.pricing-page .packages .basic button:active {
+  background-color: hsl(79, 72%, 55%);
+  transition-duration: 0s;
+}
+.pricing-page .packages .basic h3 {
+  color: hsl(82, 6%, 64%);
+}
+.pricing-page .packages .basic .price {
+  color: hsl(180, 4%, 98%);
+}
+.pricing-page .packages .basic .offer p {
+  color: hsl(82, 6%, 64%);
+  background-image: url("../img/checkmark-in-circle.png");
+}
+.pricing-page .packages .basic .offer p:nth-child(3),
+.pricing-page .packages .basic .offer p:nth-child(4),
+.pricing-page .packages .basic .offer p:nth-child(5) {
+  opacity: 0.2;
+}
+.pricing-page .packages .premium {
+  width: 28%;
+  padding: 3% 4%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(79, 72%, 55%);
+}
+.pricing-page .packages .premium .pricing-image-container {
+  width: 50px;
+  height: 50px;
+  background-color: hsl(82, 6%, 64%);
+  padding: 4.5%;
+  border-radius: 500px;
+}
+.pricing-page .packages .premium .pricing-image-container img {
+  width: 100%;
+}
+.pricing-page .packages .premium h3 {
+  font-size: 1.3rem;
+}
+.pricing-page .packages .premium .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.pricing-page .packages .premium .offer {
+  margin: 10% 0 5% 0;
+}
+.pricing-page .packages .premium .offer p {
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 13%;
+  margin-bottom: 6%;
+  font-weight: 500;
+}
+.pricing-page .packages .premium button {
+  all: unset;
+  width: 100%;
+  background-color: hsl(180, 4%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(180, 5%, 12%);
+  height: 15%;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 5%;
+  border-radius: 3px;
+}
+.pricing-page .packages .premium button img {
+  width: 10%;
+}
+.pricing-page .packages .premium button:hover {
+  cursor: pointer;
+}
+.pricing-page .packages .premium button:hover img {
+  transform: translateX(50%);
+  transition: transform ease-out 0.15s;
+}
+.pricing-page .packages .premium button:active {
+  background-color: hsl(79, 72%, 55%);
+  transition-duration: 0s;
+}
+.pricing-page .packages .premium h3,
+.pricing-page .packages .premium .price,
+.pricing-page .packages .premium p {
+  color: hsl(180, 5%, 12%);
+}
+.pricing-page .packages .premium .offer p {
+  background-image: url("../img/checkmark-in-circle-2.png");
+}
+.pricing-page .packages .premium .offer p:nth-child(4),
+.pricing-page .packages .premium .offer p:nth-child(5) {
+  opacity: 0.3;
+}
+.pricing-page .packages .diamond {
+  width: 28%;
+  padding: 3% 4%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(180, 5%, 12%);
+}
+.pricing-page .packages .diamond .pricing-image-container {
+  width: 50px;
+  height: 50px;
+  background-color: hsl(82, 6%, 64%);
+  padding: 4.5%;
+  border-radius: 500px;
+}
+.pricing-page .packages .diamond .pricing-image-container img {
+  width: 100%;
+}
+.pricing-page .packages .diamond h3 {
+  font-size: 1.3rem;
+}
+.pricing-page .packages .diamond .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.pricing-page .packages .diamond .offer {
+  margin: 10% 0 5% 0;
+}
+.pricing-page .packages .diamond .offer p {
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 13%;
+  margin-bottom: 6%;
+  font-weight: 500;
+}
+.pricing-page .packages .diamond button {
+  all: unset;
+  width: 100%;
+  background-color: hsl(180, 4%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(180, 5%, 12%);
+  height: 15%;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 5%;
+  border-radius: 3px;
+}
+.pricing-page .packages .diamond button img {
+  width: 10%;
+}
+.pricing-page .packages .diamond button:hover {
+  cursor: pointer;
+}
+.pricing-page .packages .diamond button:hover img {
+  transform: translateX(50%);
+  transition: transform ease-out 0.15s;
+}
+.pricing-page .packages .diamond button:active {
+  background-color: hsl(79, 72%, 55%);
+  transition-duration: 0s;
+}
+.pricing-page .packages .diamond h3 {
+  color: hsl(82, 6%, 64%);
+}
+.pricing-page .packages .diamond .price {
+  color: hsl(180, 4%, 98%);
+}
+.pricing-page .packages .diamond .offer p {
+  color: hsl(82, 6%, 64%);
+  background-image: url("../img/checkmark-in-circle.png");
 }/*# sourceMappingURL=style.css.map */
