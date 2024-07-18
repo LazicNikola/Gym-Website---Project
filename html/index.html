@@ -161,6 +161,7 @@
                   placeholder="Height"
                   id="height"
                   name="height"
+                  min="1"
                 />
                 <label for="height">cm</label>
               </div>
@@ -170,6 +171,7 @@
                   placeholder="Weight"
                   id="weight"
                   name="weight"
+                  min="1"
                 />
                 <label for="weight">kg</label>
               </div>
@@ -179,7 +181,7 @@
               <img src="../img/arrow-right.svg" alt="arrow right" />
             </button>
           </form>
-          <p class="bmi-message"></p>
+          <p class="bmi-message">Your BMI is</p>
         </div>
         <div class="calculate-right">
           <img src="../img/calculate-img.png" alt="female fitness model" />
@@ -188,13 +190,68 @@
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer section" id="footer"></footer>
-
-    <!--========== SCROLL UP ==========-->
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
-
-    <!--=============== EMAIL JS ===============-->
+    <footer>
+      <div class="footer-up">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="../img/logo-nav.png" alt="logo image" />
+            <p>OSAKA GYM</p>
+          </div>
+          <p>Subscribe for company updates below.</p>
+          <form class="subscribe">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="subscribe-message">You registered successfully!</p>
+        </div>
+        <div class="footer-right">
+          <div class="services-links">
+            <h2>SERVICES</h2>
+            <ul>
+              <li><a href="flex muscle">Flex Muscle</a></li>
+              <li><a href="cardio exercise">Cardio Exercise</a></li>
+              <li><a href="basic yoga">Basic Yoga</a></li>
+              <li><a href="weight lifting">Weight Lifting</a></li>
+            </ul>
+          </div>
+          <div class="pricing-links">
+            <h2>PRICING</h2>
+            <ul>
+              <li><a href="basic">Basic</a></li>
+              <li><a href="premium">Premium</a></li>
+              <li><a href="diamond">Diamond</a></li>
+            </ul>
+          </div>
+          <div class="company-links">
+            <h2>COMPANY</h2>
+            <ul>
+              <li><a href="about us">About Us</a></li>
+              <li><a href="careers">Careers</a></li>
+              <li><a href="customers">Customers</a></li>
+              <li><a href="partners">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-down">
+        <p>&copy Copyright LazicNikola. All rights reserved</p>
+        <div class="social-network">
+          <div class="social-network-logo-container">
+            <img src="../img/facebook.png" alt="facebook logo" />
+          </div>
+          <div class="social-network-logo-container">
+            <img src="../img/twitter.png" alt="twitter logo" />
+          </div>
+          <div class="social-network-logo-container">
+            <img src="../img/instagram.png" alt="instagram logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

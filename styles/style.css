@@ -324,6 +324,229 @@ main .choose-us .choose-us-right .achievements div p span {
   color: white;
 }
 
+.calculate {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10%;
+}
+.calculate .calculate-left {
+  height: 75%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 7%;
+}
+.calculate .calculate-left h1 {
+  color: hsl(180, 4%, 98%);
+  font-size: 3rem;
+}
+.calculate .calculate-left h1 span {
+  -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
+  color: transparent;
+}
+.calculate .calculate-left p {
+  width: 70%;
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+
+.calculate .calculate-left .calculator {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.calculate .calculate-left .calculator .calculator-container {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+}
+.calculate .calculate-left .calculator .calculator-container .height,
+.calculate .calculate-left .calculator .calculator-container .weight {
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.5%;
+  border: 2px solid hsl(79, 72%, 55%);
+}
+.calculate .calculate-left .calculator .calculator-container .height input,
+.calculate .calculate-left .calculator .calculator-container .weight input {
+  all: unset;
+  color: hsl(180, 4%, 72%);
+}
+.calculate .calculate-left .calculator .calculator-container .height input::-moz-placeholder, .calculate .calculate-left .calculator .calculator-container .weight input::-moz-placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+.calculate .calculate-left .calculator .calculator-container .height input::placeholder,
+.calculate .calculate-left .calculator .calculator-container .weight input::placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+.calculate .calculate-left .calculator .calculator-container .height label,
+.calculate .calculate-left .calculator .calculator-container .weight label {
+  color: hsl(180, 4%, 98%);
+}
+.calculate .calculate-left .calculator button {
+  all: unset;
+  width: 92%;
+  background-color: hsl(79, 72%, 55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.2% 0;
+  font-weight: 800;
+}
+.calculate .calculate-left .calculator button img {
+  margin-left: 2%;
+}
+.calculate .calculate-left .calculator button:hover {
+  cursor: pointer;
+}
+.calculate .calculate-left .calculator button:hover img {
+  transform: translateX(40%);
+  transition: transform ease-out 0.15s;
+}
+
+.calculate .calculate-left .bmi-message {
+  margin-top: -4%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.calculate .calculate-right {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+.calculate .calculate-right img {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
+
+footer {
+  padding: 0 7% 2% 7%;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .footer-up {
+  display: flex;
+  justify-content: space-between;
+  height: 70%;
+}
+footer .footer-up .footer-left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .footer-up .footer-left .footer-logo {
+  display: flex;
+  align-items: center;
+}
+footer .footer-up .footer-left .footer-logo img {
+  width: 6%;
+  margin-right: 2%;
+}
+footer .footer-up .footer-left .footer-logo p {
+  color: hsl(180, 4%, 98%);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+footer .footer-up .footer-left p {
+  color: hsl(180, 4%, 98%);
+  font-weight: 500;
+}
+footer .footer-up .footer-left .subscribe {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -3%;
+}
+footer .footer-up .footer-left .subscribe input {
+  all: unset;
+  color: hsl(180, 4%, 72%);
+}
+footer .footer-up .footer-left .subscribe input::-moz-placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+footer .footer-up .footer-left .subscribe input::placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+footer .footer-up .footer-left .subscribe input {
+  border: 2px solid hsl(79, 72%, 55%);
+  padding: 4%;
+  width: 55%;
+}
+footer .footer-up .footer-left .subscribe input:active {
+  background-color: hsl(180, 12%, 8%);
+}
+footer .footer-up .footer-left .subscribe button {
+  all: unset;
+  color: black;
+  font-weight: 800;
+  text-align: center;
+  padding: 4%;
+  background-color: hsl(79, 72%, 55%);
+  width: 23%;
+}
+footer .footer-up .footer-left .subscribe button:hover {
+  cursor: pointer;
+}
+footer .footer-up .footer-left .subscribe button:active {
+  background-color: hsl(180, 4%, 98%);
+}
+footer .footer-up .footer-left .subscribe-message {
+  color: hsl(79, 72%, 55%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+footer .footer-up .footer-right {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-down {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-down p {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+footer .footer-down .social-network {
+  display: flex;
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-down .social-network .social-network-logo-container {
+  width: 30px;
+  height: 30px;
+  padding: 3%;
+  background-color: hsl(79, 72%, 55%);
+  border-radius: 500px;
+}
+footer .footer-down .social-network .social-network-logo-container img {
+  width: 100%;
+}
+
 .pricing-page {
   padding: 3% 7%;
 }

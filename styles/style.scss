@@ -111,6 +111,17 @@
     }
   }
 }
+
+@mixin input {
+  input {
+    all: unset;
+    color: global.$text-color;
+    &::placeholder {
+      color: global.$text-color;
+      font-weight: 500;
+    }
+  }
+}
 // <============================= BODY =============================>
 
 body {
@@ -418,6 +429,220 @@ main {
               color: white;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+// <==================== MAIN - CALCULATE ====================>
+
+.calculate {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10%;
+  .calculate-left {
+    height: 75%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 7%;
+    h1 {
+      @include white-heading;
+      font-size: 3rem;
+    }
+    p {
+      width: 70%;
+      color: global.$text-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.calculate {
+  .calculate-left {
+    .calculator {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .calculator-container {
+        width: 92%;
+        display: flex;
+        justify-content: space-between;
+        .height,
+        .weight {
+          width: 48%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 3.5%;
+          border: 2px solid global.$first-color;
+          @include input;
+          label {
+            color: global.$title-color;
+          }
+        }
+      }
+      button {
+        all: unset;
+        width: 92%;
+        background-color: global.$first-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3.2% 0;
+        font-weight: 800;
+        img {
+          margin-left: 2%;
+        }
+        &:hover {
+          cursor: pointer;
+          img {
+            transform: translateX(40%);
+            transition: transform ease-out 0.15s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calculate {
+  .calculate-left {
+    .bmi-message {
+      margin-top: -4%;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.calculate {
+  .calculate-right {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    img {
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 30%;
+    }
+  }
+}
+
+// <============================ FOOTER ============================>
+
+footer {
+  padding: 0 7% 2% 7%;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .footer-up {
+    display: flex;
+    justify-content: space-between;
+    height: 70%;
+    .footer-left {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        img {
+          width: 6%;
+          margin-right: 2%;
+        }
+        p {
+          color: global.$title-color;
+          font-size: 1.2rem;
+          font-weight: 800;
+        }
+      }
+      p {
+        color: global.$title-color;
+        font-weight: 500;
+      }
+      .subscribe {
+        @include input;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -3%;
+        input {
+          border: 2px solid global.$first-color;
+          padding: 4%;
+          width: 55%;
+          &:active {
+            background-color: global.$body-color;
+          }
+        }
+        button {
+          all: unset;
+          color: black;
+          font-weight: 800;
+          text-align: center;
+          padding: 4%;
+          background-color: global.$first-color;
+          width: 23%;
+          &:hover {
+            cursor: pointer;
+          }
+          &:active {
+            background-color: global.$title-color;
+          }
+        }
+      }
+      .subscribe-message {
+        color: global.$first-color;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+footer {
+  .footer-up {
+    .footer-right {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+footer {
+  .footer-down {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      color: global.$text-color;
+      font-weight: 500;
+    }
+    .social-network {
+      display: flex;
+      width: 12%;
+      display: flex;
+      justify-content: space-between;
+      .social-network-logo-container {
+        width: 30px;
+        height: 30px;
+        padding: 3%;
+        background-color: global.$first-color;
+        border-radius: 500px;
+        img {
+          width: 100%;
         }
       }
     }
