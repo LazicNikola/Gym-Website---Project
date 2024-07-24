@@ -7,6 +7,7 @@
 
 html {
   font-family: "Red Hat Display", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,22 +19,7 @@ body {
 header {
   position: sticky;
   top: 1%;
-  z-index: 4;
-}
-@media only screen and (max-width: 1050px) {
-  header {
-    top: 2%;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  header {
-    top: 3%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  header {
-    margin-bottom: 9%;
-  }
+  z-index: 20;
 }
 header nav {
   width: 100%;
@@ -65,53 +51,21 @@ header nav .nav-menu {
   justify-content: space-between;
   width: 60%;
 }
-@media only screen and (max-width: 1181px) {
-  header nav .nav-menu {
-    width: 55%;
-  }
+header nav .nav-menu .nav-menu-exit-button {
+  all: unset;
+  background-image: url("../img/output-onlinepngtools.png");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  display: none;
 }
-@media only screen and (max-width: 1050px) {
-  header nav .nav-menu {
-    height: 100vh;
-    position: absolute;
-    top: -1%;
-    right: -1%;
-    background-color: hsl(180, 12%, 8%);
-    border-left: white 2px solid;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 10% 0 0 5%;
-    opacity: 0;
-    visibility: hidden;
-  }
+header nav .nav-menu .nav-menu-exit-button:hover {
+  cursor: pointer;
 }
 header nav .nav-menu ul {
   display: flex;
   width: 80%;
   gap: 15%;
-}
-@media only screen and (max-width: 1280px) {
-  header nav .nav-menu ul {
-    gap: 13%;
-  }
-}
-@media only screen and (max-width: 1181px) {
-  header nav .nav-menu ul {
-    gap: 12%;
-  }
-}
-@media only screen and (max-width: 1140px) {
-  header nav .nav-menu ul {
-    gap: 10%;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  header nav .nav-menu ul {
-    flex-direction: column;
-    height: 40%;
-    justify-content: space-between;
-    margin-bottom: 10%;
-  }
 }
 header nav .nav-menu ul li {
   list-style-type: none;
@@ -126,29 +80,24 @@ header nav .nav-menu ul li a:hover {
   color: hsl(79, 72%, 55%);
   transition: ease-out 0.15s;
 }
-header nav .nav-menu button {
+header nav .nav-menu .register-button {
   all: unset;
   color: black;
   font-weight: 800;
   text-align: center;
-  padding: 0.9rem 0.9rem;
+  padding: 0.9rem;
   width: 8.2rem;
   border-radius: 3px;
   background-color: white;
 }
-@media only screen and (max-width: 1181px) {
-  header nav .nav-menu button {
-    width: 7rem;
-  }
-}
-header nav .nav-menu button:hover {
+header nav .nav-menu .register-button:hover {
   cursor: pointer;
   transition: ease-out 0.2s;
 }
-header nav .nav-menu button:hover {
+header nav .nav-menu .register-button:hover {
   background-color: hsl(79, 72%, 55%);
 }
-header nav .nav-menu button:active {
+header nav .nav-menu .register-button:active {
   background-color: white;
   transition-duration: 0s;
 }
@@ -159,21 +108,7 @@ header nav .nav-menu-open-button {
   width: 35px;
   height: 35px;
   display: none;
-}
-@media only screen and (max-width: 1050px) {
-  header nav .nav-menu-open-button {
-    display: inline-block;
-  }
-}
-@media only screen and (max-width: 340px) {
-  header nav .nav-menu-open-button {
-    margin-right: 4%;
-  }
-}
-@media only screen and (max-width: 320px) {
-  header nav .nav-menu-open-button {
-    margin-right: 7%;
-  }
+  z-index: 9;
 }
 header nav .nav-menu-open-button:hover {
   cursor: pointer;
@@ -195,73 +130,6 @@ main .home {
   width: 100%;
   position: relative;
 }
-@media only screen and (max-width: 1280px) {
-  main .home {
-    height: 85vh;
-  }
-}
-@media only screen and (max-width: 1181px) {
-  main .home {
-    height: 75vh;
-  }
-}
-@media only screen and (max-width: 1140px) {
-  main .home {
-    height: 68vh;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  main .home {
-    height: 62vh;
-  }
-}
-@media only screen and (max-width: 930px) {
-  main .home {
-    height: 55vh;
-  }
-}
-@media only screen and (max-width: 850px) {
-  main .home {
-    height: 50vh;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home {
-    display: flex;
-    flex-direction: column;
-    height: 105vh;
-  }
-}
-@media only screen and (max-width: 750px) {
-  main .home {
-    height: 103vh;
-  }
-}
-@media only screen and (max-width: 400px) {
-  main .home {
-    height: 98vh;
-  }
-}
-@media only screen and (max-width: 350px) {
-  main .home {
-    height: 93vh;
-  }
-}
-@media only screen and (max-width: 340px) {
-  main .home {
-    height: 88vh;
-  }
-}
-@media only screen and (max-width: 320px) {
-  main .home {
-    height: 84vh;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home {
-    height: 81vh;
-  }
-}
 main .home .home-left {
   width: 65%;
   height: 72%;
@@ -270,87 +138,12 @@ main .home .home-left {
   flex-direction: column;
   justify-content: space-between;
 }
-@media only screen and (max-width: 930px) {
-  main .home .home-left {
-    height: 80%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-left {
-    width: 100%;
-    z-index: unset;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 8%;
-    height: 60%;
-  }
-}
-@media only screen and (max-width: 750px) {
-  main .home .home-left {
-    height: 65%;
-  }
-}
-@media only screen and (max-width: 680px) {
-  main .home .home-left {
-    margin-bottom: 12%;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home .home-left {
-    height: 60%;
-  }
-}
 main .home .home-left h1 {
   color: hsl(180, 4%, 98%);
   width: 100%;
   font-weight: 900;
   font-size: 5.8rem;
   margin-bottom: -4%;
-}
-@media only screen and (max-width: 1280px) {
-  main .home .home-left h1 {
-    font-size: 4.5rem;
-  }
-}
-@media only screen and (max-width: 1181px) {
-  main .home .home-left h1 {
-    font-size: 3.8rem;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  main .home .home-left h1 {
-    font-size: 3.2rem;
-  }
-}
-@media only screen and (max-width: 930px) {
-  main .home .home-left h1 {
-    margin-bottom: -2%;
-  }
-}
-@media only screen and (max-width: 850px) {
-  main .home .home-left h1 {
-    font-size: 2.7rem;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-left h1 {
-    margin-bottom: -4%;
-  }
-}
-@media only screen and (max-width: 750px) {
-  main .home .home-left h1 {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (max-width: 680px) {
-  main .home .home-left h1 {
-    margin-bottom: 2%;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home .home-left h1 {
-    font-size: 1.8rem;
-  }
 }
 main .home .home-left h1 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
@@ -359,77 +152,17 @@ main .home .home-left h1 span {
 main .home .home-left h1 span {
   font-size: 3.6rem;
 }
-@media only screen and (max-width: 1280px) {
-  main .home .home-left h1 span {
-    font-size: 2.7rem;
-  }
-}
-@media only screen and (max-width: 1181px) {
-  main .home .home-left h1 span {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  main .home .home-left h1 span {
-    font-size: 1.9rem;
-  }
-}
-@media only screen and (max-width: 850px) {
-  main .home .home-left h1 span {
-    font-size: 1.6rem;
-  }
-}
-@media only screen and (max-width: 750px) {
-  main .home .home-left h1 span {
-    font-size: 1.3rem;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home .home-left h1 span {
-    font-size: 1.05rem;
-  }
-}
 main .home .home-left p {
   color: hsl(180, 4%, 72%);
   width: 60%;
   line-height: 1.5rem;
-}
-@media only screen and (max-width: 980px) {
-  main .home .home-left p {
-    width: 70%;
-  }
-}
-@media only screen and (max-width: 850px) {
-  main .home .home-left p {
-    width: 77%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-left p {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 680px) {
-  main .home .home-left p {
-    margin-bottom: 8%;
-  }
-}
-@media only screen and (max-width: 350px) {
-  main .home .home-left p {
-    line-height: 1.2rem;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home .home-left p {
-    font-size: 0.8rem;
-  }
 }
 main .home .home-left button {
   all: unset;
   color: black;
   font-weight: 800;
   text-align: center;
-  padding: 0.9rem 0.9rem;
+  padding: 0.9rem;
   width: 8.2rem;
   border-radius: 3px;
   background-color: hsl(79, 72%, 55%);
@@ -437,19 +170,9 @@ main .home .home-left button {
   align-items: center;
   justify-content: space-around;
 }
-@media only screen and (max-width: 1181px) {
-  main .home .home-left button {
-    width: 7rem;
-  }
-}
 main .home .home-left button:hover {
   cursor: pointer;
   transition: ease-out 0.2s;
-}
-@media only screen and (max-width: 1181px) {
-  main .home .home-left button {
-    width: 8.2rem;
-  }
 }
 main .home .home-left button:hover .arrow-right {
   transform: translateX(40%);
@@ -460,75 +183,17 @@ main .home .home-left button:active {
   transition-duration: 0s;
 }
 main .home .home-right {
-  width: 60%;
+  width: 70%;
   height: 100%;
   position: absolute;
-  right: -8%;
+  right: -12%;
   bottom: 0;
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-right {
-    position: inherit;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-right {
-    width: 100%;
-    right: 0;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 430px) {
-  main .home .home-right {
-    height: 85%;
-  }
-}
-@media only screen and (max-width: 380px) {
-  main .home .home-right {
-    height: 75%;
-  }
-}
-@media only screen and (max-width: 300px) {
-  main .home .home-right {
-    height: 70%;
-  }
 }
 main .home .home-right img {
   width: 100%;
   height: 100%;
-}
-@media only screen and (max-width: 1181px) {
-  main .home .home-right img {
-    width: 85%;
-    position: absolute;
-    right: 1%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-right img {
-    width: 60%;
-    position: unset;
-  }
-}
-@media only screen and (max-width: 680px) {
-  main .home .home-right img {
-    width: 70%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  main .home .home-right img {
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 530px) {
-  main .home .home-right img {
-    width: 95%;
-  }
-}
-@media only screen and (max-width: 470px) {
-  main .home .home-right img {
-    width: 100%;
-  }
+  position: absolute;
+  left: 16%;
 }
 main .home .home-right .triangle {
   background-color: hsl(79, 63%, 50%);
@@ -540,20 +205,6 @@ main .home .home-right .triangle {
   bottom: 0;
   -webkit-clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
           clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
-}
-@media only screen and (max-width: 1050px) {
-  main .home .home-right .triangle {
-    right: -22%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  main .home .home-right .triangle {
-    width: 140%;
-    height: 100%;
-    right: -10%;
-    -webkit-clip-path: polygon(100% 0, 28% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 28% 100%, 100% 100%);
-  }
 }
 
 main .partner-logo {
@@ -1232,4 +883,334 @@ footer .footer-down .social-network .social-network-logo-container img {
 .pricing-page .packages .diamond .offer p {
   color: hsl(82, 6%, 64%);
   background-image: url("../img/checkmark-in-circle.png");
+}
+
+@media only screen and (max-width: 1280px) {
+  header nav .nav-menu ul {
+    gap: 13%;
+  }
+  main .home {
+    height: 85vh;
+  }
+  main .home .home-left h1 {
+    font-size: 4.5rem;
+  }
+  main .home .home-left h1 span {
+    font-size: 2.7rem;
+  }
+}
+@media only screen and (max-width: 1181px) {
+  header nav .nav-menu {
+    width: 55%;
+  }
+  header nav .nav-menu ul {
+    gap: 12%;
+  }
+  header nav .nav-menu .register-button {
+    width: 7rem;
+  }
+  main .home {
+    height: 75vh;
+  }
+  main .home .home-left h1 {
+    font-size: 3.8rem;
+  }
+  main .home .home-left h1 span {
+    font-size: 2.2rem;
+  }
+  main .home .home-left button {
+    width: 7.7rem;
+  }
+  main .home .home-right img {
+    width: 85%;
+    position: absolute;
+    right: 12%;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  header nav .nav-menu ul {
+    gap: 10%;
+  }
+  main .home {
+    height: 68vh;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  header nav .nav-menu {
+    height: 110%;
+    position: fixed;
+    top: -1%;
+    right: -1%;
+    z-index: 10;
+    background-color: hsl(180, 12%, 8%);
+    border-left: white 2px solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 12% 0 0 5%;
+    width: 55%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  header nav .nav-menu .nav-menu-exit-button {
+    display: inline-block;
+    position: fixed;
+    right: 5%;
+    top: 6%;
+  }
+  header nav .nav-menu ul {
+    flex-direction: column;
+    height: 40%;
+    justify-content: space-between;
+    margin-bottom: 10%;
+  }
+  header nav .nav-menu-open-button {
+    display: inline-block;
+  }
+  main .home {
+    height: 62vh;
+  }
+  main .home .home-left h1 {
+    font-size: 3.2rem;
+  }
+  main .home .home-left h1 span {
+    font-size: 1.9rem;
+  }
+  main .home .home-right .triangle {
+    width: 105%;
+    height: 160%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  main .home .home-left p {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 930px) {
+  header nav .nav-menu {
+    padding-top: 14%;
+  }
+  main .home {
+    height: 55vh;
+  }
+  main .home .home-left {
+    height: 80%;
+  }
+  main .home .home-left h1 {
+    margin-bottom: -2%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  main .home {
+    height: 50vh;
+  }
+  main .home .home-left h1 {
+    font-size: 2.7rem;
+  }
+  main .home .home-left h1 span {
+    font-size: 1.6rem;
+  }
+  main .home .home-left p {
+    width: 77%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  header {
+    margin-bottom: 12%;
+  }
+  header nav .nav-menu {
+    width: 65%;
+    padding-top: 17%;
+  }
+  main .home {
+    display: flex;
+    flex-direction: column;
+    height: 117vh;
+  }
+  main .home .home-left {
+    width: 100%;
+    z-index: unset;
+    align-items: center;
+    text-align: center;
+    height: 35%;
+  }
+  main .home .home-left p {
+    width: 100%;
+  }
+  main .home .home-left button:hover .arrow-right {
+    transform: unset;
+    transition: unset;
+  }
+  main .home .home-left button:active .arrow-right {
+    transform: translateX(40%);
+    transition: transform ease-out 0.1s;
+  }
+  main .home .home-right {
+    position: inherit;
+    width: 100%;
+    right: 0;
+    text-align: center;
+  }
+  main .home .home-right img {
+    width: 60%;
+    position: unset;
+  }
+  main .home .home-right .triangle {
+    width: 140%;
+    height: 100%;
+    right: -10%;
+    -webkit-clip-path: polygon(100% 0, 28% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 28% 100%, 100% 100%);
+  }
+}
+@media only screen and (max-width: 750px) {
+  main .home {
+    height: 111vh;
+  }
+  main .home .home-left {
+    height: 65%;
+  }
+  main .home .home-left h1 {
+    font-size: 2.2rem;
+  }
+  main .home .home-left h1 span {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 680px) {
+  header nav .nav-menu {
+    padding-top: 20%;
+    width: 75%;
+  }
+  header nav .nav-menu .nav-menu-exit-button {
+    right: 7%;
+  }
+}
+main .home .home-left {
+  margin-bottom: 12%;
+}
+main .home .home-left h1 {
+  margin-bottom: 3%;
+}
+main .home .home-left p {
+  margin-bottom: 8%;
+}
+main .home .home-right img {
+  width: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav .nav-menu {
+    padding: 23% 0 0 8%;
+  }
+  header nav .nav-menu ul {
+    margin-bottom: 13%;
+    height: 35%;
+  }
+  main .home .home-right img {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  main .home .home-right img {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 470px) {
+  header nav .nav-menu {
+    width: 90%;
+    padding: 25% 0 0 9%;
+  }
+  header nav .nav-menu .nav-menu-exit-button {
+    right: 10%;
+  }
+  header nav .nav-menu ul {
+    height: 30%;
+  }
+  main .home .home-right img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 430px) {
+  header {
+    margin-bottom: 16%;
+  }
+  main .home .home-right {
+    height: 85%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  header nav .nav-menu {
+    padding-top: 30%;
+  }
+  header nav .nav-menu .register-button {
+    font-size: 0.9rem;
+    width: 6rem;
+  }
+  main .home {
+    height: 98vh;
+  }
+  main .home .home-left p {
+    font-size: 0.9rem;
+  }
+  main .home .home-left button {
+    width: 7rem;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  main .home .home-right {
+    height: 75%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  main .home {
+    height: 93vh;
+  }
+  main .home .home-left p {
+    line-height: 1.2rem;
+  }
+}
+@media only screen and (max-width: 340px) {
+  header nav .logo {
+    width: 70%;
+  }
+  main .home {
+    height: 88vh;
+  }
+}
+@media only screen and (max-width: 320px) {
+  header nav .nav-menu {
+    padding: 35% 0 0 11%;
+  }
+  header nav .nav-menu ul {
+    margin-bottom: 22%;
+    height: 27%;
+  }
+  header nav .nav-menu .register-button {
+    padding: 0.5rem;
+  }
+  main .home {
+    height: 84vh;
+  }
+  main .home .home-left h1 {
+    font-size: 1.8rem;
+    margin-top: 3%;
+  }
+  main .home .home-left p {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  main .home {
+    height: 81vh;
+  }
+  main .home .home-left {
+    height: 60%;
+  }
+  main .home .home-left h1 span {
+    font-size: 1.05rem;
+  }
+  main .home .home-right {
+    height: 70%;
+  }
 }/*# sourceMappingURL=style.css.map */
