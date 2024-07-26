@@ -17,9 +17,10 @@ body {
 }
 
 header {
-  position: sticky;
-  top: 1%;
+  position: fixed;
+  top: 2%;
   z-index: 20;
+  width: 100%;
 }
 header nav {
   width: 100%;
@@ -27,7 +28,6 @@ header nav {
   justify-content: space-between;
   align-items: center;
   color: hsl(180, 4%, 98%);
-  margin-bottom: 6%;
   padding: 1% 7%;
 }
 header nav .logo {
@@ -122,7 +122,7 @@ header nav .nav-menu-open-button:active {
 }
 
 main {
-  padding: 0 7%;
+  padding: 12% 7% 0 7%;
   width: 100%;
 }
 main .home {
@@ -186,14 +186,14 @@ main .home .home-right {
   width: 70%;
   height: 100%;
   position: absolute;
-  right: -12%;
+  right: -14%;
   bottom: 0;
 }
 main .home .home-right img {
-  width: 100%;
+  width: 88%;
   height: 100%;
   position: absolute;
-  left: 16%;
+  left: 11%;
 }
 main .home .home-right .triangle {
   background-color: hsl(79, 63%, 50%);
@@ -201,7 +201,7 @@ main .home .home-right .triangle {
   height: 180%;
   position: absolute;
   z-index: -1;
-  right: -3%;
+  right: 0;
   bottom: 0;
   -webkit-clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
           clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
@@ -221,13 +221,11 @@ main .program h1 {
   color: hsl(79, 72%, 55%);
   font-weight: 500;
   font-size: 2.4rem;
-  text-align: center;
 }
 main .program h2 {
   color: hsl(180, 4%, 98%);
-  text-align: center;
   font-size: 2.8rem;
-  margin: 1% 0 5% 0;
+  margin-bottom: 6%;
 }
 main .program h2 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
@@ -236,11 +234,16 @@ main .program h2 span {
 
 main .program {
   margin-bottom: 10%;
+  height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 main .program .program-types {
   display: flex;
   justify-content: space-between;
-  height: 50vh;
+  height: 65%;
 }
 main .program .program-types div {
   height: 100%;
@@ -282,8 +285,8 @@ main .program .program-types div .arrow-right-gray {
   all: unset;
   background-image: url("../img/arrow-right-gray.png");
   background-size: cover;
-  width: 12%;
-  height: 10%;
+  width: 30px;
+  height: 30px;
   position: absolute;
   right: 10%;
   bottom: 5%;
@@ -361,13 +364,13 @@ main .choose-us .choose-us-right .achievements div p span {
   color: white;
 }
 
-.calculate {
+main .calculate {
   height: 80vh;
   width: 100%;
   display: flex;
   margin-bottom: 10%;
 }
-.calculate .calculate-left {
+main .calculate .calculate-left {
   height: 75%;
   width: 50%;
   display: flex;
@@ -375,34 +378,34 @@ main .choose-us .choose-us-right .achievements div p span {
   justify-content: space-between;
   margin-top: 7%;
 }
-.calculate .calculate-left h1 {
+main .calculate .calculate-left h1 {
   color: hsl(180, 4%, 98%);
   font-size: 3rem;
 }
-.calculate .calculate-left h1 span {
+main .calculate .calculate-left h1 span {
   -webkit-text-stroke: 0.05rem hsl(180, 4%, 98%);
   color: transparent;
 }
-.calculate .calculate-left p {
+main .calculate .calculate-left p {
   width: 70%;
   color: hsl(180, 4%, 72%);
   font-weight: 500;
 }
 
-.calculate .calculate-left .calculator {
+main .calculate .calculate-left .calculator {
   width: 100%;
   height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.calculate .calculate-left .calculator .calculator-container {
+main .calculate .calculate-left .calculator .calculator-container {
   width: 92%;
   display: flex;
   justify-content: space-between;
 }
-.calculate .calculate-left .calculator .calculator-container .height,
-.calculate .calculate-left .calculator .calculator-container .weight {
+main .calculate .calculate-left .calculator .calculator-container .height,
+main .calculate .calculate-left .calculator .calculator-container .weight {
   width: 48%;
   display: flex;
   justify-content: space-between;
@@ -410,25 +413,25 @@ main .choose-us .choose-us-right .achievements div p span {
   padding: 3.5%;
   border: 2px solid hsl(79, 72%, 55%);
 }
-.calculate .calculate-left .calculator .calculator-container .height input,
-.calculate .calculate-left .calculator .calculator-container .weight input {
+main .calculate .calculate-left .calculator .calculator-container .height input,
+main .calculate .calculate-left .calculator .calculator-container .weight input {
   all: unset;
   color: hsl(180, 4%, 72%);
 }
-.calculate .calculate-left .calculator .calculator-container .height input::-moz-placeholder, .calculate .calculate-left .calculator .calculator-container .weight input::-moz-placeholder {
+main .calculate .calculate-left .calculator .calculator-container .height input::-moz-placeholder, main .calculate .calculate-left .calculator .calculator-container .weight input::-moz-placeholder {
   color: hsl(180, 4%, 72%);
   font-weight: 500;
 }
-.calculate .calculate-left .calculator .calculator-container .height input::placeholder,
-.calculate .calculate-left .calculator .calculator-container .weight input::placeholder {
+main .calculate .calculate-left .calculator .calculator-container .height input::placeholder,
+main .calculate .calculate-left .calculator .calculator-container .weight input::placeholder {
   color: hsl(180, 4%, 72%);
   font-weight: 500;
 }
-.calculate .calculate-left .calculator .calculator-container .height label,
-.calculate .calculate-left .calculator .calculator-container .weight label {
+main .calculate .calculate-left .calculator .calculator-container .height label,
+main .calculate .calculate-left .calculator .calculator-container .weight label {
   color: hsl(180, 4%, 98%);
 }
-.calculate .calculate-left .calculator button {
+main .calculate .calculate-left .calculator button {
   all: unset;
   width: 92%;
   background-color: hsl(79, 72%, 55%);
@@ -438,29 +441,29 @@ main .choose-us .choose-us-right .achievements div p span {
   padding: 3.2% 0;
   font-weight: 800;
 }
-.calculate .calculate-left .calculator button img {
+main .calculate .calculate-left .calculator button img {
   margin-left: 2%;
 }
-.calculate .calculate-left .calculator button:hover {
+main .calculate .calculate-left .calculator button:hover {
   cursor: pointer;
 }
-.calculate .calculate-left .calculator button:hover img {
+main .calculate .calculate-left .calculator button:hover img {
   transform: translateX(40%);
   transition: transform ease-out 0.15s;
 }
 
-.calculate .calculate-left .bmi-message {
+main .calculate .calculate-left .bmi-message {
   margin-top: -4%;
   opacity: 0;
   visibility: hidden;
 }
 
-.calculate .calculate-right {
+main .calculate .calculate-right {
   height: 100%;
   width: 50%;
   position: relative;
 }
-.calculate .calculate-right img {
+main .calculate .calculate-right img {
   height: 100%;
   position: absolute;
   bottom: 0;
@@ -924,7 +927,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-right img {
     width: 85%;
     position: absolute;
-    right: 12%;
+    left: 14%;
   }
 }
 @media only screen and (max-width: 1140px) {
@@ -979,6 +982,24 @@ footer .footer-down .social-network .social-network-logo-container img {
     width: 105%;
     height: 160%;
   }
+  main .partner-logo img {
+    width: 20%;
+  }
+  main .program {
+    height: 140vh;
+  }
+  main .program .program-types {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    height: 80%;
+    width: 80%;
+  }
+  main .program .program-types div {
+    width: 38%;
+    height: 45%;
+    padding: 4%;
+  }
 }
 @media only screen and (max-width: 980px) {
   main .home .home-left p {
@@ -998,6 +1019,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-left h1 {
     margin-bottom: -2%;
   }
+  main .program .program-types {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 850px) {
   main .home {
@@ -1014,24 +1038,25 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
 }
 @media only screen and (max-width: 800px) {
-  header {
-    margin-bottom: 12%;
-  }
   header nav .nav-menu {
     width: 65%;
     padding-top: 17%;
   }
+  main {
+    padding-top: 16%;
+  }
   main .home {
     display: flex;
     flex-direction: column;
-    height: 117vh;
+    justify-content: space-between;
+    height: 105vh;
   }
   main .home .home-left {
     width: 100%;
     z-index: unset;
     align-items: center;
     text-align: center;
-    height: 35%;
+    height: 40%;
   }
   main .home .home-left p {
     width: 100%;
@@ -1047,6 +1072,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-right {
     position: inherit;
     width: 100%;
+    height: 50%;
     right: 0;
     text-align: center;
   }
@@ -1061,19 +1087,41 @@ footer .footer-down .social-network .social-network-logo-container img {
     -webkit-clip-path: polygon(100% 0, 28% 100%, 100% 100%);
             clip-path: polygon(100% 0, 28% 100%, 100% 100%);
   }
+  main .partner-logo {
+    flex-wrap: wrap;
+    -moz-column-gap: 14%;
+         column-gap: 14%;
+    row-gap: 3vh;
+  }
+  main .partner-logo img {
+    width: 25%;
+  }
+  main .program .program-types {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 750px) {
   main .home {
-    height: 111vh;
-  }
-  main .home .home-left {
-    height: 65%;
+    height: 100vh;
   }
   main .home .home-left h1 {
     font-size: 2.2rem;
   }
   main .home .home-left h1 span {
     font-size: 1.3rem;
+  }
+  main .program {
+    height: 130vh;
+  }
+  main .program h1 {
+    font-size: 2rem;
+  }
+  main .program h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8%;
+  }
+  main .program .program-types {
+    height: 84%;
   }
 }
 @media only screen and (max-width: 680px) {
@@ -1084,20 +1132,33 @@ footer .footer-down .social-network .social-network-logo-container img {
   header nav .nav-menu .nav-menu-exit-button {
     right: 7%;
   }
+  main {
+    padding-top: 19%;
+  }
+  main .home .home-left h1 {
+    margin-bottom: 3%;
+  }
+  main .home .home-left p {
+    margin-bottom: 8%;
+  }
+  main .home .home-right img {
+    width: 70%;
+  }
+  main .program {
+    height: 240vh;
+  }
+  main .program .program-types {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    width: 45%;
+  }
+  main .program .program-types div {
+    width: 100%;
+    height: 23%;
+    padding: 10%;
+  }
 }
-main .home .home-left {
-  margin-bottom: 12%;
-}
-main .home .home-left h1 {
-  margin-bottom: 3%;
-}
-main .home .home-left p {
-  margin-bottom: 8%;
-}
-main .home .home-right img {
-  width: 70%;
-}
-
 @media only screen and (max-width: 600px) {
   header nav .nav-menu {
     padding: 23% 0 0 8%;
@@ -1106,13 +1167,38 @@ main .home .home-right img {
     margin-bottom: 13%;
     height: 35%;
   }
+  main .home {
+    margin-bottom: 8%;
+  }
   main .home .home-right img {
     width: 80%;
+  }
+  main .partner-logo img {
+    width: 30%;
+  }
+  main .program {
+    height: 230vh;
+  }
+  main .program h1 {
+    font-size: 1.7rem;
+  }
+  main .program h2 {
+    font-size: 1.9rem;
+    margin-bottom: 11%;
+  }
+  main .program .program-types {
+    width: 53%;
   }
 }
 @media only screen and (max-width: 530px) {
   main .home .home-right img {
     width: 95%;
+  }
+  main .program {
+    height: 220vh;
+  }
+  main .program .program-types {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 470px) {
@@ -1126,16 +1212,26 @@ main .home .home-right img {
   header nav .nav-menu ul {
     height: 30%;
   }
+  main {
+    padding-top: 24%;
+  }
+  main .home {
+    margin-bottom: 11%;
+  }
   main .home .home-right img {
     width: 100%;
   }
-}
-@media only screen and (max-width: 430px) {
-  header {
-    margin-bottom: 16%;
+  main .partner-logo img {
+    width: 35%;
   }
-  main .home .home-right {
-    height: 85%;
+  main .program h1 {
+    font-size: 1.6rem;
+  }
+  main .program h2 {
+    font-size: 1.6rem;
+  }
+  main .program .program-types {
+    width: 65%;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -1147,7 +1243,11 @@ main .home .home-right img {
     width: 6rem;
   }
   main .home {
-    height: 98vh;
+    height: 93vh;
+    margin-bottom: 13%;
+  }
+  main .home .home-left {
+    height: 42%;
   }
   main .home .home-left p {
     font-size: 0.9rem;
@@ -1156,26 +1256,58 @@ main .home .home-right img {
     width: 7rem;
     font-size: 0.9rem;
   }
-}
-@media only screen and (max-width: 380px) {
-  main .home .home-right {
-    height: 75%;
+  main .partner-logo {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    row-gap: 2.3vh;
+  }
+  main .partner-logo img {
+    width: 40%;
+  }
+  main .program h2 {
+    margin-top: 5%;
+    margin-bottom: 16%;
+    font-size: 2.3rem;
+    text-align: center;
+  }
+  main .program h2 span {
+    display: block;
+    font-size: 1.4rem;
+  }
+  main .program .program-types {
+    width: 75%;
+  }
+  main .program .program-types div h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+  }
+  main .program .program-types div p {
+    font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 350px) {
+  header nav .logo {
+    width: 70%;
+  }
+  main {
+    padding-top: 27%;
+  }
   main .home {
-    height: 93vh;
+    height: 88vh;
+    margin-bottom: 15%;
   }
   main .home .home-left p {
     line-height: 1.2rem;
   }
-}
-@media only screen and (max-width: 340px) {
-  header nav .logo {
-    width: 70%;
+  main .partner-logo img {
+    width: 45%;
   }
-  main .home {
-    height: 88vh;
+  main .program {
+    height: 205vh;
+  }
+  main .program .program-types {
+    width: 80%;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -1199,18 +1331,15 @@ main .home .home-right img {
   main .home .home-left p {
     font-size: 0.8rem;
   }
+  main .program .program-types {
+    width: 85%;
+  }
 }
 @media only screen and (max-width: 300px) {
   main .home {
     height: 81vh;
   }
-  main .home .home-left {
-    height: 60%;
-  }
   main .home .home-left h1 span {
     font-size: 1.05rem;
-  }
-  main .home .home-right {
-    height: 70%;
   }
 }/*# sourceMappingURL=style.css.map */

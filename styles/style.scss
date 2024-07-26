@@ -133,16 +133,16 @@ body {
 // <============================= HEADER =============================>
 
 header {
-  position: sticky;
-  top: 1%;
+  position: fixed;
+  top: 2%;
   z-index: 20;
+  width: 100%;
   nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: global.$title-color;
-    margin-bottom: 6%;
     padding: 1% 7%;
     .logo {
       display: flex;
@@ -230,7 +230,7 @@ header {
 // <============================= MAIN =============================>
 // <==================== MAIN - HOME ====================>
 main {
-  padding: 0 7%;
+  padding: 12% 7% 0 7%;
   width: 100%;
   .home {
     height: 90vh;
@@ -280,13 +280,13 @@ main {
       width: 70%;
       height: 100%;
       position: absolute;
-      right: -12%;
+      right: -14%;
       bottom: 0;
       img {
-        width: 100%;
+        width: 88%;
         height: 100%;
         position: absolute;
-        left: 16%;
+        left: 11%;
       }
       .triangle {
         background-color: global.$first-color-dark;
@@ -294,7 +294,7 @@ main {
         height: 180%;
         position: absolute;
         z-index: -1;
-        right: -3%;
+        right: 0;
         bottom: 0;
         clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
       }
@@ -322,13 +322,11 @@ main {
     h1 {
       @include green-heading;
       font-size: 2.4rem;
-      text-align: center;
     }
     h2 {
       @include white-heading;
-      text-align: center;
       font-size: 2.8rem;
-      margin: 1% 0 5% 0;
+      margin-bottom: 6%;
     }
   }
 }
@@ -336,10 +334,15 @@ main {
 main {
   .program {
     margin-bottom: 10%;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     .program-types {
       display: flex;
       justify-content: space-between;
-      height: 50vh;
+      height: 65%;
       div {
         height: 100%;
         background-color: global.$title-color-black;
@@ -379,8 +382,8 @@ main {
           all: unset;
           background-image: url("../img/arrow-right-gray.png");
           background-size: cover;
-          width: 12%;
-          height: 10%;
+          width: 30px;
+          height: 30px;
           position: absolute;
           right: 10%;
           bottom: 5%;
@@ -473,100 +476,106 @@ main {
 
 // <==================== MAIN - CALCULATE ====================>
 
-.calculate {
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  margin-bottom: 10%;
-  .calculate-left {
-    height: 75%;
-    width: 50%;
+main {
+  .calculate {
+    height: 80vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 7%;
-    h1 {
-      @include white-heading;
-      font-size: 3rem;
-    }
-    p {
-      width: 70%;
-      color: global.$text-color;
-      font-weight: 500;
-    }
-  }
-}
-
-.calculate {
-  .calculate-left {
-    .calculator {
-      width: 100%;
-      height: 40%;
+    margin-bottom: 10%;
+    .calculate-left {
+      height: 75%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      .calculator-container {
-        width: 92%;
+      margin-top: 7%;
+      h1 {
+        @include white-heading;
+        font-size: 3rem;
+      }
+      p {
+        width: 70%;
+        color: global.$text-color;
+        font-weight: 500;
+      }
+    }
+  }
+}
+main {
+  .calculate {
+    .calculate-left {
+      .calculator {
+        width: 100%;
+        height: 40%;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        .height,
-        .weight {
-          width: 48%;
+        .calculator-container {
+          width: 92%;
           display: flex;
           justify-content: space-between;
+          .height,
+          .weight {
+            width: 48%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3.5%;
+            border: 2px solid global.$first-color;
+            @include input;
+            label {
+              color: global.$title-color;
+            }
+          }
+        }
+        button {
+          all: unset;
+          width: 92%;
+          background-color: global.$first-color;
+          display: flex;
+          justify-content: center;
           align-items: center;
-          padding: 3.5%;
-          border: 2px solid global.$first-color;
-          @include input;
-          label {
-            color: global.$title-color;
-          }
-        }
-      }
-      button {
-        all: unset;
-        width: 92%;
-        background-color: global.$first-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 3.2% 0;
-        font-weight: 800;
-        img {
-          margin-left: 2%;
-        }
-        &:hover {
-          cursor: pointer;
+          padding: 3.2% 0;
+          font-weight: 800;
           img {
-            transform: translateX(40%);
-            transition: transform ease-out 0.15s;
+            margin-left: 2%;
+          }
+          &:hover {
+            cursor: pointer;
+            img {
+              transform: translateX(40%);
+              transition: transform ease-out 0.15s;
+            }
           }
         }
       }
     }
   }
 }
-
-.calculate {
-  .calculate-left {
-    .bmi-message {
-      margin-top: -4%;
-      opacity: 0;
-      visibility: hidden;
+main {
+  .calculate {
+    .calculate-left {
+      .bmi-message {
+        margin-top: -4%;
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
 }
 
-.calculate {
-  .calculate-right {
-    height: 100%;
-    width: 50%;
-    position: relative;
-    img {
+main {
+  .calculate {
+    .calculate-right {
       height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 30%;
+      width: 50%;
+      position: relative;
+      img {
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+      }
     }
   }
 }
@@ -830,7 +839,7 @@ footer {
         img {
           width: 85%;
           position: absolute;
-          right: 12%;
+          left: 14%;
         }
       }
     }
@@ -908,6 +917,30 @@ footer {
       }
     }
   }
+  main {
+    .partner-logo {
+      img {
+        width: 20%;
+      }
+    }
+  }
+  main {
+    .program {
+      height: 140vh;
+      .program-types {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-between;
+        height: 80%;
+        width: 80%;
+        div {
+          width: 38%;
+          height: 45%;
+          padding: 4%;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -941,6 +974,13 @@ footer {
       }
     }
   }
+  main {
+    .program {
+      .program-types {
+        width: 90%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -964,7 +1004,6 @@ footer {
 
 @media only screen and (max-width: 800px) {
   header {
-    margin-bottom: 12%;
     nav {
       .nav-menu {
         width: 65%;
@@ -973,16 +1012,18 @@ footer {
     }
   }
   main {
+    padding-top: 16%;
     .home {
       display: flex;
       flex-direction: column;
-      height: 117vh;
+      justify-content: space-between;
+      height: 105vh;
       .home-left {
         width: 100%;
         z-index: unset;
         align-items: center;
         text-align: center;
-        height: 35%;
+        height: 40%;
         p {
           width: 100%;
         }
@@ -1004,6 +1045,7 @@ footer {
       .home-right {
         position: inherit;
         width: 100%;
+        height: 50%;
         right: 0;
         text-align: center;
         img {
@@ -1019,20 +1061,51 @@ footer {
       }
     }
   }
+  main {
+    .partner-logo {
+      flex-wrap: wrap;
+      column-gap: 14%;
+      row-gap: 3vh;
+      img {
+        width: 25%;
+      }
+    }
+  }
+  main {
+    .program {
+      .program-types {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 750px) {
   main {
     .home {
-      height: 111vh;
+      height: 100vh;
       .home-left {
-        height: 65%;
         h1 {
           font-size: 2.2rem;
           span {
             font-size: 1.3rem;
           }
         }
+      }
+    }
+  }
+  main {
+    .program {
+      height: 130vh;
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 8%;
+      }
+      .program-types {
+        height: 84%;
       }
     }
   }
@@ -1050,22 +1123,38 @@ footer {
       }
     }
   }
-}
 
-main {
-  .home {
-    .home-left {
-      margin-bottom: 12%;
-      h1 {
-        margin-bottom: 3%;
+  main {
+    padding-top: 19%;
+    .home {
+      .home-left {
+        h1 {
+          margin-bottom: 3%;
+        }
+        p {
+          margin-bottom: 8%;
+        }
       }
-      p {
-        margin-bottom: 8%;
+      .home-right {
+        img {
+          width: 70%;
+        }
       }
     }
-    .home-right {
-      img {
-        width: 70%;
+  }
+  main {
+    .program {
+      height: 240vh;
+      .program-types {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+        width: 45%;
+        div {
+          width: 100%;
+          height: 23%;
+          padding: 10%;
+        }
       }
     }
   }
@@ -1085,10 +1174,33 @@ main {
   }
   main {
     .home {
+      margin-bottom: 8%;
       .home-right {
         img {
           width: 80%;
         }
+      }
+    }
+  }
+  main {
+    .partner-logo {
+      img {
+        width: 30%;
+      }
+    }
+  }
+  main {
+    .program {
+      height: 230vh;
+      h1 {
+        font-size: 1.7rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+        margin-bottom: 11%;
+      }
+      .program-types {
+        width: 53%;
       }
     }
   }
@@ -1101,6 +1213,14 @@ main {
         img {
           width: 95%;
         }
+      }
+    }
+  }
+  main {
+    .program {
+      height: 220vh;
+      .program-types {
+        width: 60%;
       }
     }
   }
@@ -1122,7 +1242,9 @@ main {
     }
   }
   main {
+    padding-top: 24%;
     .home {
+      margin-bottom: 11%;
       .home-right {
         img {
           width: 100%;
@@ -1130,16 +1252,23 @@ main {
       }
     }
   }
-}
-
-@media only screen and (max-width: 430px) {
-  header {
-    margin-bottom: 16%;
+  main {
+    .partner-logo {
+      img {
+        width: 35%;
+      }
+    }
   }
   main {
-    .home {
-      .home-right {
-        height: 85%;
+    .program {
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .program-types {
+        width: 65%;
       }
     }
   }
@@ -1159,8 +1288,10 @@ main {
   }
   main {
     .home {
-      height: 98vh;
+      height: 93vh;
+      margin-bottom: 13%;
       .home-left {
+        height: 42%;
         p {
           font-size: 0.9rem;
         }
@@ -1171,32 +1302,46 @@ main {
       }
     }
   }
-}
-
-@media only screen and (max-width: 380px) {
   main {
-    .home {
-      .home-right {
-        height: 75%;
+    .partner-logo {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+      row-gap: 2.3vh;
+      img {
+        width: 40%;
       }
     }
   }
-}
-
-@media only screen and (max-width: 350px) {
   main {
-    .home {
-      height: 93vh;
-      .home-left {
-        p {
-          line-height: 1.2rem;
+    .program {
+      h2 {
+        margin-top: 5%;
+        margin-bottom: 16%;
+        font-size: 2.3rem;
+        text-align: center;
+        span {
+          display: block;
+          font-size: 1.4rem;
+        }
+      }
+      .program-types {
+        width: 75%;
+        div {
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5%;
+          }
+          p {
+            font-size: 0.9rem;
+          }
         }
       }
     }
   }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 350px) {
   header {
     nav {
       .logo {
@@ -1205,8 +1350,30 @@ main {
     }
   }
   main {
+    padding-top: 27%;
     .home {
       height: 88vh;
+      margin-bottom: 15%;
+      .home-left {
+        p {
+          line-height: 1.2rem;
+        }
+      }
+    }
+  }
+  main {
+    .partner-logo {
+      img {
+        width: 45%;
+      }
+    }
+  }
+  main {
+    .program {
+      height: 205vh;
+      .program-types {
+        width: 80%;
+      }
     }
   }
 }
@@ -1240,6 +1407,13 @@ main {
       }
     }
   }
+  main {
+    .program {
+      .program-types {
+        width: 85%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -1247,15 +1421,11 @@ main {
     .home {
       height: 81vh;
       .home-left {
-        height: 60%;
         h1 {
           span {
             font-size: 1.05rem;
           }
         }
-      }
-      .home-right {
-        height: 70%;
       }
     }
   }
