@@ -296,32 +296,38 @@ main .program .program-types div .arrow-right-gray:hover {
   transform: translateX(40%);
   transition: transform ease-out 0.15s;
 }
+main .program .program-types div .arrow-right-gray:active {
+  background-color: hsl(180, 4%, 35%);
+  transition: 0s;
+  border-radius: 500px;
+}
 
 main .choose-us {
   height: 80vh;
   display: flex;
   margin-bottom: 10%;
+  position: relative;
 }
 main .choose-us .choose-us-left {
   height: 100%;
   width: 50%;
   position: relative;
-  overflow: hidden;
 }
 main .choose-us .choose-us-left img {
   height: 100%;
-  margin-left: 11%;
-  z-index: 2;
-  position: inherit;
+  position: absolute;
+  left: 11%;
+  z-index: 4;
 }
 main .choose-us .choose-us-left .triangle-second {
   background-color: hsl(79, 63%, 50%);
-  -webkit-clip-path: polygon(0 0, 0% 100%, 85% 100%);
-          clip-path: polygon(0 0, 0% 100%, 85% 100%);
+  -webkit-clip-path: polygon(0 0, 14% 0, 85% 100%, 0 100%);
+          clip-path: polygon(0 0, 14% 0, 85% 100%, 0 100%);
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 140%;
+  height: 100%;
+  z-index: 3;
 }
 
 main .choose-us .choose-us-right {
@@ -901,6 +907,26 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-left h1 span {
     font-size: 2.7rem;
   }
+  main .program {
+    margin-bottom: 12%;
+  }
+  main .choose-us {
+    justify-content: space-between;
+  }
+  main .choose-us .choose-us-left .triangle-second {
+    width: 130%;
+  }
+  main .choose-us .choose-us-right {
+    width: 40%;
+    margin-right: 5%;
+    padding: 3% 0 0 0;
+  }
+  main .choose-us .choose-us-right p {
+    width: 100%;
+  }
+  main .choose-us .choose-us-right .achievements {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1181px) {
   header nav .nav-menu {
@@ -936,6 +962,15 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .home {
     height: 68vh;
+  }
+  main .choose-us .choose-us-right {
+    margin-right: 2%;
+  }
+  main .choose-us .choose-us-right h2 {
+    font-size: 2.8rem;
+  }
+  main .choose-us .choose-us-right p {
+    margin: 3% 0;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -1000,6 +1035,12 @@ footer .footer-down .social-network .social-network-logo-container img {
     height: 45%;
     padding: 4%;
   }
+  main .program {
+    margin-bottom: 14%;
+  }
+  main .choose-us {
+    height: 75vh;
+  }
 }
 @media only screen and (max-width: 980px) {
   main .home .home-left p {
@@ -1022,6 +1063,24 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .program .program-types {
     width: 90%;
   }
+  main .program {
+    margin-bottom: 16%;
+  }
+  main .choose-us {
+    height: 70vh;
+  }
+  main .choose-us .choose-us-left img {
+    left: 8%;
+  }
+  main .choose-us .choose-us-right h1 {
+    font-size: 1.8rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    font-size: 2.5rem;
+  }
+  main .choose-us .choose-us-right p {
+    margin: 2% 0;
+  }
 }
 @media only screen and (max-width: 850px) {
   main .home {
@@ -1036,11 +1095,29 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-left p {
     width: 77%;
   }
+  main .choose-us {
+    height: 68vh;
+  }
+  main .choose-us .choose-us-right h1 {
+    font-size: 1.7rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    font-size: 2.3rem;
+  }
 }
 @media only screen and (max-width: 800px) {
   header nav .nav-menu {
     width: 65%;
     padding-top: 17%;
+  }
+  header nav .nav-menu-open-button:hover {
+    background-color: unset;
+    transition: unset;
+    border-radius: unset;
+  }
+  header nav .nav-menu-open-button:active {
+    background-color: rgba(255, 255, 255, 0.568);
+    border-radius: 10px;
   }
   main {
     padding-top: 16%;
@@ -1057,6 +1134,9 @@ footer .footer-down .social-network .social-network-logo-container img {
     align-items: center;
     text-align: center;
     height: 40%;
+  }
+  main .home .home-left h1 {
+    font-size: 2.8rem;
   }
   main .home .home-left p {
     width: 100%;
@@ -1092,6 +1172,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     -moz-column-gap: 14%;
          column-gap: 14%;
     row-gap: 3vh;
+    margin-bottom: 10%;
   }
   main .partner-logo img {
     width: 25%;
@@ -1099,13 +1180,66 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .program .program-types {
     width: 100%;
   }
+  main .program .program-types div .arrow-right-gray {
+    background-image: url("../img/arrow-right-white.png");
+  }
+  main .program .program-types div .arrow-right-gray:hover {
+    transform: unset;
+    transition: unset;
+  }
+  main .program .program-types div .arrow-right-gray:active {
+    background-color: unset;
+    transition: 0s;
+    border-radius: 500px;
+    transform: translateX(40%);
+  }
+  main .choose-us {
+    flex-direction: column-reverse;
+    height: 140vh;
+    align-items: center;
+  }
+  main .choose-us .choose-us-left {
+    width: 100%;
+    height: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .choose-us .choose-us-left img {
+    position: unset;
+    left: unset;
+  }
+  main .choose-us .choose-us-left .triangle-second {
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    width: 110%;
+    height: 90%;
+    left: -10%;
+  }
+  main .choose-us .choose-us-right {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin-right: 0;
+  }
+  main .choose-us .choose-us-right h1 {
+    margin-bottom: 1%;
+    font-size: 2.4rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    margin-bottom: 7%;
+    font-size: 2.8rem;
+  }
+  main .choose-us .choose-us-right p {
+    margin-bottom: 7%;
+  }
 }
 @media only screen and (max-width: 750px) {
   main .home {
     height: 100vh;
   }
   main .home .home-left h1 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
   main .home .home-left h1 span {
     font-size: 1.3rem;
@@ -1122,6 +1256,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .program .program-types {
     height: 84%;
+  }
+  main .program {
+    margin-bottom: 18%;
   }
 }
 @media only screen and (max-width: 680px) {
@@ -1158,6 +1295,12 @@ footer .footer-down .social-network .social-network-logo-container img {
     height: 23%;
     padding: 10%;
   }
+  main .choose-us {
+    height: 130vh;
+  }
+  main .choose-us .choose-us-right h1 {
+    margin-bottom: 0;
+  }
 }
 @media only screen and (max-width: 600px) {
   header nav .nav-menu {
@@ -1172,6 +1315,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .home .home-right img {
     width: 80%;
+  }
+  main .partner-logo {
+    margin-bottom: 15%;
   }
   main .partner-logo img {
     width: 30%;
@@ -1189,6 +1335,12 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .program .program-types {
     width: 53%;
   }
+  main .program {
+    margin-bottom: 22%;
+  }
+  main .choose-us {
+    height: 120vh;
+  }
 }
 @media only screen and (max-width: 530px) {
   main .home .home-right img {
@@ -1199,6 +1351,22 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .program .program-types {
     width: 60%;
+  }
+  main .choose-us {
+    height: 130vh;
+  }
+  main .choose-us .choose-us-right h1 {
+    font-size: 2rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    margin-bottom: 10%;
+    font-size: 2.4rem;
+  }
+  main .choose-us .choose-us-right p {
+    margin-bottom: 10%;
+  }
+  main .choose-us .choose-us-left {
+    height: 45%;
   }
 }
 @media only screen and (max-width: 470px) {
@@ -1218,6 +1386,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home {
     margin-bottom: 11%;
   }
+  main .home .home-left h1 {
+    font-size: 2rem;
+  }
   main .home .home-right img {
     width: 100%;
   }
@@ -1232,6 +1403,24 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .program .program-types {
     width: 65%;
+  }
+  main .program {
+    margin-bottom: 26%;
+  }
+  main .choose-us {
+    height: 110vh;
+  }
+  main .choose-us .choose-us-right h1 {
+    font-size: 1.6rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    font-size: 1.9rem;
+  }
+  main .choose-us .choose-us-right p {
+    font-size: 0.9rem;
+  }
+  main .choose-us .choose-us-right .achievements div p span {
+    font-size: 1.6rem;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -1285,6 +1474,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .program .program-types div p {
     font-size: 0.9rem;
   }
+  main .program {
+    margin-bottom: 30%;
+  }
 }
 @media only screen and (max-width: 350px) {
   header nav .logo {
@@ -1308,6 +1500,18 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .program .program-types {
     width: 80%;
+  }
+  main .program {
+    margin-bottom: 35%;
+  }
+  main .choose-us .choose-us-right h1 {
+    font-size: 1.4rem;
+  }
+  main .choose-us .choose-us-right h2 {
+    font-size: 1.6rem;
+  }
+  main .choose-us .choose-us-left {
+    height: 48%;
   }
 }
 @media only screen and (max-width: 320px) {
