@@ -185,7 +185,6 @@
 body {
   background-color: global.$body-color;
   overflow-x: hidden;
-  position: relative;
 }
 
 // <============================= HEADER =============================>
@@ -300,6 +299,8 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: absolute;
+      z-index: 2;
       h1 {
         @include white-heading;
         width: 100%;
@@ -336,14 +337,14 @@ main {
     .home-right {
       width: 70%;
       height: 100%;
-      position: absolute;
-      right: -14%;
-      bottom: 0;
+      position: relative;
+      right: -44%;
       img {
         width: 88%;
-        height: 100%;
+        height: 105%;
         position: absolute;
-        left: 11%;
+        right: 0;
+        bottom: 0;
       }
       .triangle {
         background-color: global.$first-color-dark;
@@ -365,7 +366,7 @@ main {
   .partner-logo {
     display: flex;
     justify-content: space-around;
-    margin: 5% 0;
+    margin: 5% 0 7% 0;
     img {
       width: 16%;
     }
@@ -847,6 +848,8 @@ footer {
   }
 }
 
+// <============================= MEDIA QUERY =============================>
+
 @media only screen and (max-width: 1280px) {
   header {
     nav {
@@ -943,8 +946,6 @@ footer {
       .home-right {
         img {
           width: 85%;
-          position: absolute;
-          left: 14%;
         }
       }
     }
@@ -977,6 +978,11 @@ footer {
   main {
     .home {
       height: 68vh;
+    }
+  }
+  main {
+    .partner-logo {
+      margin-bottom: 8%;
     }
   }
   main {
@@ -1167,6 +1173,16 @@ footer {
           margin-bottom: -2%;
         }
       }
+      .home-right {
+        img {
+          height: 107%;
+        }
+      }
+    }
+  }
+  main {
+    .partner-logo {
+      margin-bottom: 10%;
     }
   }
   main {
@@ -1301,13 +1317,14 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 105vh;
+      height: 115vh;
       .home-left {
         width: 100%;
+        position: unset;
         z-index: unset;
         align-items: center;
         text-align: center;
-        height: 40%;
+        height: 35%;
         h1 {
           font-size: 2.8rem;
         }
@@ -1330,13 +1347,14 @@ footer {
         }
       }
       .home-right {
-        position: inherit;
         width: 100%;
         height: 50%;
         right: 0;
+        bottom: 0;
         text-align: center;
         img {
           width: 60%;
+          height: 100%;
           position: unset;
         }
         .triangle {
@@ -1353,7 +1371,7 @@ footer {
       flex-wrap: wrap;
       column-gap: 14%;
       row-gap: 3vh;
-      margin-bottom: 10%;
+      margin-bottom: 14%;
       img {
         width: 25%;
       }
@@ -1500,8 +1518,9 @@ footer {
 @media only screen and (max-width: 750px) {
   main {
     .home {
-      height: 100vh;
+      height: 105vh;
       .home-left {
+        height: 38%;
         h1 {
           font-size: 2.6rem;
           span {
@@ -1562,6 +1581,11 @@ footer {
           width: 70%;
         }
       }
+    }
+  }
+  main {
+    .partner-logo {
+      margin-bottom: 17%;
     }
   }
   main {
@@ -1640,7 +1664,7 @@ footer {
   }
   main {
     .partner-logo {
-      margin-bottom: 15%;
+      margin-bottom: 18%;
       img {
         width: 30%;
       }
@@ -1827,6 +1851,7 @@ footer {
   }
   main {
     .partner-logo {
+      margin-bottom: 22%;
       img {
         width: 35%;
       }
@@ -2000,6 +2025,7 @@ footer {
       align-items: center;
       flex-wrap: nowrap;
       row-gap: 2.3vh;
+      margin-bottom: 25%;
       img {
         width: 40%;
       }
