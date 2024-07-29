@@ -133,7 +133,6 @@ main .home {
 main .home .home-left {
   width: 65%;
   height: 72%;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -325,7 +324,7 @@ main .choose-us .choose-us-left .triangle-second {
           clip-path: polygon(0 0, 14% 0, 85% 100%, 0 100%);
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 130%;
   height: 100%;
   z-index: 3;
 }
@@ -423,6 +422,7 @@ main .calculate .calculate-left .calculator .calculator-container .height input,
 main .calculate .calculate-left .calculator .calculator-container .weight input {
   all: unset;
   color: hsl(180, 4%, 72%);
+  width: 100%;
 }
 main .calculate .calculate-left .calculator .calculator-container .height input::-moz-placeholder, main .calculate .calculate-left .calculator .calculator-container .weight input::-moz-placeholder {
   color: hsl(180, 4%, 72%);
@@ -477,12 +477,14 @@ main .calculate .calculate-right img {
 }
 
 footer {
-  padding: 0 7% 2% 7%;
+  padding: 3% 7% 2% 7%;
   width: 100%;
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 2%;
+  border-top: 3px solid hsl(180, 11%, 13%);
 }
 footer .footer-up {
   display: flex;
@@ -522,6 +524,7 @@ footer .footer-up .footer-left .subscribe {
 footer .footer-up .footer-left .subscribe input {
   all: unset;
   color: hsl(180, 4%, 72%);
+  width: 100%;
 }
 footer .footer-up .footer-left .subscribe input::-moz-placeholder {
   color: hsl(180, 4%, 72%);
@@ -1180,9 +1183,6 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .choose-us {
     justify-content: space-between;
   }
-  main .choose-us .choose-us-left .triangle-second {
-    width: 130%;
-  }
   main .choose-us .choose-us-right {
     width: 40%;
     margin-right: 5%;
@@ -1193,6 +1193,21 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us .choose-us-right .achievements {
     width: 100%;
+  }
+  main .calculate .calculate-left {
+    width: 70%;
+  }
+  main .calculate .calculate-left p {
+    width: 50%;
+  }
+  main .calculate .calculate-left .calculator {
+    width: 70%;
+  }
+  main .calculate .calculate-right {
+    width: 30%;
+  }
+  main .calculate .calculate-right img {
+    left: -13%;
   }
 }
 @media only screen and (max-width: 1181px) {
@@ -1222,6 +1237,15 @@ footer .footer-down .social-network .social-network-logo-container img {
     position: absolute;
     left: 14%;
   }
+  main .calculate .calculate-left {
+    width: 70%;
+  }
+  main .calculate .calculate-left p {
+    width: 60%;
+  }
+  main .calculate .calculate-left .calculator {
+    width: 80%;
+  }
 }
 @media only screen and (max-width: 1140px) {
   header nav .nav-menu ul {
@@ -1245,6 +1269,12 @@ footer .footer-down .social-network .social-network-logo-container img {
     align-items: center;
     height: 270vh;
     gap: 5%;
+  }
+  footer .footer-up .footer-left {
+    width: 45%;
+  }
+  footer .footer-up .footer-right {
+    width: 45%;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -1315,10 +1345,37 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .choose-us {
     height: 75vh;
   }
+  main .calculate {
+    height: 74vh;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 2.7rem;
+  }
 }
 @media only screen and (max-width: 980px) {
   main .home .home-left p {
     width: 70%;
+  }
+  main .calculate {
+    margin-bottom: 13%;
+  }
+  main .calculate .calculate-left p {
+    width: 70%;
+  }
+  footer {
+    height: 85vh;
+  }
+  footer .footer-up {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+  }
+  footer .footer-up .footer-left {
+    width: 60%;
+    height: 50%;
+  }
+  footer .footer-up .footer-right {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 930px) {
@@ -1342,6 +1399,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us {
     height: 70vh;
+    margin-bottom: 12%;
   }
   main .choose-us .choose-us-left img {
     left: 8%;
@@ -1357,6 +1415,30 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   .pricing-page {
     padding: 6% 7%;
+  }
+  main .calculate {
+    height: 70vh;
+  }
+  main .calculate .calculate-left {
+    width: 75%;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 2.5rem;
+  }
+  main .calculate .calculate-left p {
+    width: 70%;
+  }
+  main .calculate .calculate-left .calculator {
+    width: 75%;
+  }
+  main .calculate .calculate-right {
+    width: 25%;
+  }
+  main .calculate .calculate-right img {
+    left: -35%;
+  }
+  footer .footer-down .social-network {
+    width: 14%;
   }
 }
 @media only screen and (max-width: 850px) {
@@ -1380,6 +1462,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us .choose-us-right h2 {
     font-size: 2.3rem;
+  }
+  main .calculate {
+    height: 65vh;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -1474,6 +1559,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     flex-direction: column-reverse;
     height: 140vh;
     align-items: center;
+    margin-bottom: 10%;
   }
   main .choose-us .choose-us-left {
     width: 100%;
@@ -1509,6 +1595,72 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us .choose-us-right p {
     margin-bottom: 7%;
+  }
+  main .calculate {
+    flex-direction: column;
+    height: 125vh;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15%;
+  }
+  main .calculate .calculate-left {
+    align-items: center;
+    width: 70%;
+    height: 42%;
+  }
+  main .calculate .calculate-left h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  main .calculate .calculate-left p {
+    width: 100%;
+    text-align: center;
+  }
+  main .calculate .calculate-left .calculator {
+    width: 100%;
+  }
+  main .calculate .calculate-left .calculator .calculator-container {
+    width: 100%;
+  }
+  main .calculate .calculate-left .calculator button {
+    width: 100%;
+  }
+  main .calculate .calculate-left .calculator button:hover img {
+    transform: unset;
+    transition: unset;
+  }
+  main .calculate .calculate-left .calculator button:active {
+    background-color: white;
+    transition: background-color ease-out 0.15s;
+  }
+  main .calculate .calculate-left .calculator button:active img {
+    transform: translateX(40%);
+    transition-duration: 0s;
+  }
+  main .calculate .calculate-right {
+    height: 48%;
+    width: 100%;
+    text-align: center;
+  }
+  main .calculate .calculate-right img {
+    position: unset;
+    left: unset;
+  }
+  footer {
+    height: 80vh;
+  }
+  footer .footer-up {
+    height: 83%;
+  }
+  footer .footer-up .footer-left {
+    width: 80%;
+  }
+  footer .footer-up .footer-right {
+    width: 70%;
+  }
+  footer .footer-down .social-network {
+    width: 18%;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -1574,9 +1726,27 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us {
     height: 130vh;
+    margin-bottom: 14%;
   }
   main .choose-us .choose-us-right h1 {
     margin-bottom: 0;
+  }
+  main .calculate {
+    height: 115vh;
+    margin-bottom: 18%;
+  }
+  main .calculate .calculate-left {
+    height: 44%;
+    width: 80%;
+  }
+  footer {
+    height: 75vh;
+  }
+  footer .footer-up .footer-right {
+    width: 100%;
+  }
+  footer .footer-down .social-network {
+    width: 20%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -1629,6 +1799,12 @@ footer .footer-down .social-network .social-network-logo-container img {
     font-size: 2.4rem;
     margin-bottom: 10%;
   }
+  main .calculate .calculate-left {
+    width: 90%;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 1.9rem;
+  }
 }
 @media only screen and (max-width: 530px) {
   main .home .home-right img {
@@ -1642,6 +1818,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us {
     height: 130vh;
+    margin-bottom: 20%;
   }
   main .choose-us .choose-us-right h1 {
     font-size: 2rem;
@@ -1655,6 +1832,67 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .choose-us .choose-us-left {
     height: 45%;
+  }
+  main .calculate {
+    margin-bottom: 21%;
+  }
+  footer {
+    height: 175vh;
+    margin-bottom: 8%;
+    padding-top: 6%;
+  }
+  footer .footer-up {
+    height: 83%;
+    width: 100%;
+  }
+  footer .footer-up .footer-left {
+    width: 100%;
+    height: 32%;
+  }
+  footer .footer-up .footer-left .subscribe {
+    flex-direction: column;
+    height: 48%;
+    align-items: center;
+  }
+  footer .footer-up .footer-left .subscribe #email {
+    width: 90%;
+  }
+  footer .footer-up .footer-left .subscribe button {
+    width: 90%;
+  }
+  footer .footer-up .footer-right {
+    flex-direction: column;
+    height: 64%;
+  }
+  footer .footer-up .footer-right .services-links,
+  footer .footer-up .footer-right .pricing-links,
+  footer .footer-up .footer-right .company-links {
+    height: 29%;
+  }
+  footer .footer-up .footer-right .services-links ul,
+  footer .footer-up .footer-right .pricing-links ul,
+  footer .footer-up .footer-right .company-links ul {
+    height: 73%;
+    justify-content: space-between;
+  }
+  footer .footer-up .footer-right .services-links ul li,
+  footer .footer-up .footer-right .pricing-links ul li,
+  footer .footer-up .footer-right .company-links ul li {
+    margin: unset;
+  }
+  footer .footer-up .footer-right .pricing-links {
+    height: 23%;
+  }
+  footer .footer-up .footer-right .pricing-links ul {
+    height: 66%;
+  }
+  footer .footer-down {
+    height: 7%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  footer .footer-down .social-network {
+    width: 26%;
   }
 }
 @media only screen and (max-width: 470px) {
@@ -1720,6 +1958,71 @@ footer .footer-down .social-network .social-network-logo-container img {
   .pricing-page .packages {
     height: 235vh;
   }
+  main .calculate {
+    height: 115vh;
+  }
+  main .calculate .calculate-left {
+    height: 51%;
+    width: 100%;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 1.7rem;
+  }
+  main .calculate .calculate-left p {
+    font-size: 0.9rem;
+  }
+  main .calculate .calculate-left .calculator {
+    height: 50%;
+    align-items: center;
+  }
+  main .calculate .calculate-left .calculator .calculator-container {
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+  }
+  main .calculate .calculate-left .calculator .calculator-container .height,
+  main .calculate .calculate-left .calculator .calculator-container .weight {
+    width: 80%;
+  }
+  main .calculate .calculate-left .calculator button {
+    width: 80%;
+  }
+  main .calculate .calculate-left .bmi-message {
+    font-size: 0.9rem;
+    margin-top: -8%;
+  }
+  main .calculate .calculate-right {
+    height: 43%;
+  }
+  footer {
+    height: 165vh;
+    margin-bottom: 14%;
+  }
+  footer .footer-up .footer-left {
+    height: 29%;
+  }
+  footer .footer-up .footer-left p {
+    font-size: 0.9rem;
+  }
+  footer .footer-up .footer-left .subscribe {
+    height: 46%;
+  }
+  footer .footer-up .footer-right .services-links ul li a,
+  footer .footer-up .footer-right .pricing-links ul li a,
+  footer .footer-up .footer-right .company-links ul li a {
+    font-size: 0.9rem;
+  }
+  footer .footer-down {
+    height: 7%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  footer .footer-down p {
+    font-size: 0.9rem;
+  }
+  footer .footer-down .social-network {
+    width: 32%;
+  }
 }
 @media only screen and (max-width: 400px) {
   header nav .nav-menu {
@@ -1782,6 +2085,66 @@ footer .footer-down .social-network .social-network-logo-container img {
     height: 225vh;
     gap: 3.5%;
   }
+  main .choose-us {
+    margin-bottom: 26%;
+  }
+  main .calculate {
+    margin-bottom: 26%;
+  }
+  main .calculate .calculate-left {
+    height: 48%;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 1.5rem;
+  }
+  main .calculate .calculate-left .calculator {
+    height: 53%;
+  }
+  main .calculate .calculate-left .calculator .calculator-container {
+    height: 57%;
+  }
+  main .calculate .calculate-left .calculator button {
+    height: 15%;
+  }
+  main .calculate .calculate-left .bmi-message {
+    margin-top: -6%;
+  }
+  main .calculate .calculate-right {
+    height: 46%;
+  }
+  footer {
+    height: 155vh;
+    margin-bottom: 16%;
+  }
+  footer .footer-up {
+    height: 81%;
+  }
+  footer .footer-up .footer-left {
+    height: 31%;
+  }
+  footer .footer-up .footer-left .subscribe {
+    height: 44%;
+  }
+  footer .footer-up .footer-right {
+    height: 63%;
+  }
+  footer .footer-up .footer-right .services-links,
+  footer .footer-up .footer-right .pricing-links,
+  footer .footer-up .footer-right .company-links {
+    height: 30%;
+  }
+  footer .footer-up .footer-right .pricing-links {
+    height: 25%;
+  }
+  footer .footer-up .footer-right .pricing-links ul {
+    height: 68%;
+  }
+  footer .footer-down {
+    height: 8%;
+  }
+  footer .footer-down .social-network {
+    width: 40%;
+  }
 }
 @media only screen and (max-width: 350px) {
   header nav .logo {
@@ -1824,6 +2187,46 @@ footer .footer-down .social-network .social-network-logo-container img {
   .pricing-page .packages {
     height: 215vh;
   }
+  main .choose-us {
+    margin-bottom: 30%;
+  }
+  main .calculate {
+    margin-bottom: 30%;
+  }
+  main .calculate .calculate-left h1 {
+    font-size: 1.3rem;
+  }
+  main .calculate .calculate-left .calculator {
+    height: 48%;
+  }
+  main .calculate .calculate-left .calculator .calculator-container {
+    height: 60%;
+  }
+  main .calculate .calculate-left .calculator .calculator-container .height,
+  main .calculate .calculate-left .calculator .calculator-container .weight {
+    width: 90%;
+  }
+  main .calculate .calculate-left .calculator button {
+    width: 90%;
+  }
+  main .calculate .calculate-left .bmi-message {
+    margin-top: -8%;
+  }
+  footer .footer-up .footer-right .pricing-links {
+    height: 24%;
+  }
+  footer .footer-up .footer-left .footer-logo img {
+    width: 8%;
+  }
+  footer .footer-up .footer-left .subscribe {
+    height: 40%;
+  }
+  footer .footer-down p {
+    font-size: 0.8rem;
+  }
+  footer .footer-down .social-network {
+    width: 45%;
+  }
 }
 @media only screen and (max-width: 320px) {
   header nav .nav-menu {
@@ -1852,6 +2255,15 @@ footer .footer-down .social-network .social-network-logo-container img {
   .pricing-page .packages {
     height: 195vh;
   }
+  main .calculate {
+    height: 110vh;
+  }
+  main .calculate .calculate-left .calculator {
+    height: 46%;
+  }
+  footer .footer-down p {
+    font-size: 0.75rem;
+  }
 }
 @media only screen and (max-width: 300px) {
   main .home {
@@ -1865,5 +2277,8 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   .pricing-page h2 {
     font-size: 1.45rem;
+  }
+  footer .footer-down p {
+    font-size: 0.7rem;
   }
 }/*# sourceMappingURL=style.css.map */

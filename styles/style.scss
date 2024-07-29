@@ -173,6 +173,7 @@
   input {
     all: unset;
     color: global.$text-color;
+    width: 100%;
     &::placeholder {
       color: global.$text-color;
       font-weight: 500;
@@ -296,7 +297,6 @@ main {
     .home-left {
       width: 65%;
       height: 72%;
-      z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -483,7 +483,7 @@ main {
         clip-path: polygon(0 0, 14% 0, 85% 100%, 0 100%);
         position: absolute;
         bottom: 0;
-        width: 100%;
+        width: 130%;
         height: 100%;
         z-index: 3;
       }
@@ -646,12 +646,14 @@ main {
 // <============================ FOOTER ============================>
 
 footer {
-  padding: 0 7% 2% 7%;
+  padding: 3% 7% 2% 7%;
   width: 100%;
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 2%;
+  border-top: 3px solid hsl(180, 11%, 13%);
   .footer-up {
     display: flex;
     justify-content: space-between;
@@ -876,11 +878,6 @@ footer {
   main {
     .choose-us {
       justify-content: space-between;
-      .choose-us-left {
-        .triangle-second {
-          width: 130%;
-        }
-      }
       .choose-us-right {
         width: 40%;
         margin-right: 5%;
@@ -890,6 +887,25 @@ footer {
         }
         .achievements {
           width: 100%;
+        }
+      }
+    }
+  }
+  main {
+    .calculate {
+      .calculate-left {
+        width: 70%;
+        p {
+          width: 50%;
+        }
+        .calculator {
+          width: 70%;
+        }
+      }
+      .calculate-right {
+        width: 30%;
+        img {
+          left: -13%;
         }
       }
     }
@@ -933,6 +949,19 @@ footer {
       }
     }
   }
+  main {
+    .calculate {
+      .calculate-left {
+        width: 70%;
+        p {
+          width: 60%;
+        }
+        .calculator {
+          width: 80%;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1140px) {
@@ -970,6 +999,16 @@ footer {
       align-items: center;
       height: 270vh;
       gap: 5%;
+    }
+  }
+  footer {
+    .footer-up {
+      .footer-left {
+        width: 45%;
+      }
+      .footer-right {
+        width: 45%;
+      }
     }
   }
 }
@@ -1062,6 +1101,16 @@ footer {
       height: 75vh;
     }
   }
+  main {
+    .calculate {
+      height: 74vh;
+      .calculate-left {
+        h1 {
+          font-size: 2.7rem;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -1071,6 +1120,31 @@ footer {
         p {
           width: 70%;
         }
+      }
+    }
+  }
+  main {
+    .calculate {
+      margin-bottom: 13%;
+      .calculate-left {
+        p {
+          width: 70%;
+        }
+      }
+    }
+  }
+  footer {
+    height: 85vh;
+    .footer-up {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 80%;
+      .footer-left {
+        width: 60%;
+        height: 50%;
+      }
+      .footer-right {
+        width: 60%;
       }
     }
   }
@@ -1110,6 +1184,7 @@ footer {
   main {
     .choose-us {
       height: 70vh;
+      margin-bottom: 12%;
       .choose-us-left {
         img {
           left: 8%;
@@ -1130,6 +1205,36 @@ footer {
   }
   .pricing-page {
     padding: 6% 7%;
+  }
+  main {
+    .calculate {
+      height: 70vh;
+      .calculate-left {
+        width: 75%;
+        h1 {
+          font-size: 2.5rem;
+        }
+        p {
+          width: 70%;
+        }
+        .calculator {
+          width: 75%;
+        }
+      }
+      .calculate-right {
+        width: 25%;
+        img {
+          left: -35%;
+        }
+      }
+    }
+  }
+  footer {
+    .footer-down {
+      .social-network {
+        width: 14%;
+      }
+    }
   }
 }
 
@@ -1161,6 +1266,11 @@ footer {
           font-size: 2.3rem;
         }
       }
+    }
+  }
+  main {
+    .calculate {
+      height: 65vh;
     }
   }
 }
@@ -1276,6 +1386,7 @@ footer {
       flex-direction: column-reverse;
       height: 140vh;
       align-items: center;
+      margin-bottom: 10%;
       .choose-us-left {
         width: 100%;
         height: 42%;
@@ -1309,6 +1420,78 @@ footer {
         p {
           margin-bottom: 7%;
         }
+      }
+    }
+  }
+  main {
+    .calculate {
+      flex-direction: column;
+      height: 125vh;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15%;
+      .calculate-left {
+        align-items: center;
+        width: 70%;
+        height: 42%;
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-size: 2.2rem;
+        }
+        p {
+          width: 100%;
+          text-align: center;
+        }
+        .calculator {
+          width: 100%;
+          .calculator-container {
+            width: 100%;
+          }
+          button {
+            width: 100%;
+            &:hover {
+              img {
+                transform: unset;
+                transition: unset;
+              }
+            }
+            &:active {
+              background-color: white;
+              transition: background-color ease-out 0.15s;
+              img {
+                transform: translateX(40%);
+                transition-duration: 0s;
+              }
+            }
+          }
+        }
+      }
+      .calculate-right {
+        height: 48%;
+        width: 100%;
+        text-align: center;
+        img {
+          position: unset;
+          left: unset;
+        }
+      }
+    }
+  }
+  footer {
+    height: 80vh;
+    .footer-up {
+      height: 83%;
+      .footer-left {
+        width: 80%;
+      }
+      .footer-right {
+        width: 70%;
+      }
+    }
+    .footer-down {
+      .social-network {
+        width: 18%;
       }
     }
   }
@@ -1400,10 +1583,34 @@ footer {
   main {
     .choose-us {
       height: 130vh;
+      margin-bottom: 14%;
       .choose-us-right {
         h1 {
           margin-bottom: 0;
         }
+      }
+    }
+  }
+  main {
+    .calculate {
+      height: 115vh;
+      margin-bottom: 18%;
+      .calculate-left {
+        height: 44%;
+        width: 80%;
+      }
+    }
+  }
+  footer {
+    height: 75vh;
+    .footer-up {
+      .footer-right {
+        width: 100%;
+      }
+    }
+    .footer-down {
+      .social-network {
+        width: 20%;
       }
     }
   }
@@ -1475,6 +1682,16 @@ footer {
       margin-bottom: 10%;
     }
   }
+  main {
+    .calculate {
+      .calculate-left {
+        width: 90%;
+        h1 {
+          font-size: 1.9rem;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 530px) {
@@ -1498,6 +1715,7 @@ footer {
   main {
     .choose-us {
       height: 130vh;
+      margin-bottom: 20%;
       .choose-us-right {
         h1 {
           font-size: 2rem;
@@ -1512,6 +1730,65 @@ footer {
       }
       .choose-us-left {
         height: 45%;
+      }
+    }
+  }
+  main {
+    .calculate {
+      margin-bottom: 21%;
+    }
+  }
+  footer {
+    height: 175vh;
+    margin-bottom: 8%;
+    padding-top: 6%;
+    .footer-up {
+      height: 83%;
+      width: 100%;
+      .footer-left {
+        width: 100%;
+        height: 32%;
+        .subscribe {
+          flex-direction: column;
+          height: 48%;
+          align-items: center;
+          #email {
+            width: 90%;
+          }
+          button {
+            width: 90%;
+          }
+        }
+      }
+      .footer-right {
+        flex-direction: column;
+        height: 64%;
+        .services-links,
+        .pricing-links,
+        .company-links {
+          height: 29%;
+          ul {
+            height: 73%;
+            justify-content: space-between;
+            li {
+              margin: unset;
+            }
+          }
+        }
+        .pricing-links {
+          height: 23%;
+          ul {
+            height: 66%;
+          }
+        }
+      }
+    }
+    .footer-down {
+      height: 7%;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      .social-network {
+        width: 26%;
       }
     }
   }
@@ -1610,6 +1887,83 @@ footer {
       height: 235vh;
     }
   }
+  main {
+    .calculate {
+      height: 115vh;
+      .calculate-left {
+        height: 51%;
+        width: 100%;
+        h1 {
+          font-size: 1.7rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+        .calculator {
+          height: 50%;
+          align-items: center;
+          .calculator-container {
+            flex-direction: column;
+            align-items: center;
+            height: 60%;
+            .height,
+            .weight {
+              width: 80%;
+            }
+          }
+          button {
+            width: 80%;
+          }
+        }
+        .bmi-message {
+          font-size: 0.9rem;
+          margin-top: -8%;
+        }
+      }
+      .calculate-right {
+        height: 43%;
+      }
+    }
+  }
+  footer {
+    height: 165vh;
+    margin-bottom: 14%;
+    .footer-up {
+      .footer-left {
+        height: 29%;
+        p {
+          font-size: 0.9rem;
+        }
+        .subscribe {
+          height: 46%;
+        }
+      }
+      .footer-right {
+        .services-links,
+        .pricing-links,
+        .company-links {
+          ul {
+            li {
+              a {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-down {
+      height: 7%;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      p {
+        font-size: 0.9rem;
+      }
+      .social-network {
+        width: 32%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -1691,6 +2045,71 @@ footer {
       gap: 3.5%;
     }
   }
+  main {
+    .choose-us {
+      margin-bottom: 26%;
+    }
+  }
+  main {
+    .calculate {
+      margin-bottom: 26%;
+      .calculate-left {
+        height: 48%;
+        h1 {
+          font-size: 1.5rem;
+        }
+        .calculator {
+          height: 53%;
+          .calculator-container {
+            height: 57%;
+          }
+          button {
+            height: 15%;
+          }
+        }
+        .bmi-message {
+          margin-top: -6%;
+        }
+      }
+      .calculate-right {
+        height: 46%;
+      }
+    }
+  }
+  footer {
+    height: 155vh;
+    margin-bottom: 16%;
+    .footer-up {
+      height: 81%;
+      .footer-left {
+        height: 31%;
+
+        .subscribe {
+          height: 44%;
+        }
+      }
+      .footer-right {
+        height: 63%;
+        .services-links,
+        .pricing-links,
+        .company-links {
+          height: 30%;
+        }
+        .pricing-links {
+          height: 25%;
+          ul {
+            height: 68%;
+          }
+        }
+      }
+    }
+    .footer-down {
+      height: 8%;
+      .social-network {
+        width: 40%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -1756,6 +2175,64 @@ footer {
       height: 215vh;
     }
   }
+  main {
+    .choose-us {
+      margin-bottom: 30%;
+    }
+  }
+  main {
+    .calculate {
+      margin-bottom: 30%;
+      .calculate-left {
+        h1 {
+          font-size: 1.3rem;
+        }
+        .calculator {
+          height: 48%;
+          .calculator-container {
+            height: 60%;
+            .height,
+            .weight {
+              width: 90%;
+            }
+          }
+          button {
+            width: 90%;
+          }
+        }
+        .bmi-message {
+          margin-top: -8%;
+        }
+      }
+    }
+  }
+  footer {
+    .footer-up {
+      .footer-right {
+        .pricing-links {
+          height: 24%;
+        }
+      }
+      .footer-left {
+        .footer-logo {
+          img {
+            width: 8%;
+          }
+        }
+        .subscribe {
+          height: 40%;
+        }
+      }
+    }
+    .footer-down {
+      p {
+        font-size: 0.8rem;
+      }
+      .social-network {
+        width: 45%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -1799,6 +2276,23 @@ footer {
       height: 195vh;
     }
   }
+  main {
+    .calculate {
+      height: 110vh;
+      .calculate-left {
+        .calculator {
+          height: 46%;
+        }
+      }
+    }
+  }
+  footer {
+    .footer-down {
+      p {
+        font-size: 0.75rem;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -1820,6 +2314,13 @@ footer {
     }
     h2 {
       font-size: 1.45rem;
+    }
+  }
+  footer {
+    .footer-down {
+      p {
+        font-size: 0.7rem;
+      }
     }
   }
 }
