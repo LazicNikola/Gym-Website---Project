@@ -17,9 +17,11 @@ body {
 
 header {
   position: fixed;
-  top: 2%;
+  top: 0;
+  padding: 0.5% 0;
   z-index: 20;
   width: 100%;
+  transition: all ease-out 0.5s;
 }
 header nav {
   width: 100%;
@@ -118,6 +120,12 @@ header nav .nav-menu-open-button:hover {
 header nav .nav-menu-open-button:active {
   background-color: white;
   transition: 0s;
+}
+
+.show-top-header {
+  background-color: hsla(180, 12%, 8%, 0.938);
+  border-bottom: 3px solid hsla(180, 9%, 13%, 0.938);
+  transition: all ease-out 0.5s;
 }
 
 main {
@@ -636,6 +644,36 @@ footer .footer-down .social-network .social-network-logo-container {
 }
 footer .footer-down .social-network .social-network-logo-container img {
   width: 100%;
+}
+
+.scroll-up {
+  all: unset;
+  background-image: url("../img/arrow-up.svg");
+  width: 45px;
+  height: 45px;
+  background-color: hsl(79, 72%, 55%);
+  background-size: cover;
+  position: fixed;
+  right: 30px;
+  bottom: -40px;
+  z-index: 20;
+  border: 2px solid hsl(180, 12%, 8%);
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-out 0.5s;
+}
+.scroll-up:hover {
+  cursor: pointer;
+  transform: translateY(-17px);
+  transition: all ease-out 0.2s;
+}
+
+.show-scroll-up-button {
+  opacity: 1;
+  visibility: visible;
+  bottom: 30px;
+  transition: all ease-out 0.5s;
 }
 
 .pricing-page {
@@ -1284,7 +1322,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     height: 110%;
     position: fixed;
     top: -1%;
-    right: -1%;
+    right: -60%;
     z-index: 10;
     background-color: hsl(180, 12%, 8%);
     border-left: white 2px solid;
@@ -1293,12 +1331,12 @@ footer .footer-down .social-network .social-network-logo-container img {
     padding: 12% 0 0 5%;
     width: 55%;
     opacity: 0;
-    visibility: hidden;
+    transition: all ease-out 0.5s;
   }
   header nav .nav-menu .nav-menu-exit-button {
     display: inline-block;
-    position: fixed;
-    right: 5%;
+    position: absolute;
+    right: 10%;
     top: 6%;
   }
   header nav .nav-menu ul {
@@ -1309,6 +1347,11 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   header nav .nav-menu-open-button {
     display: inline-block;
+  }
+  header nav .show-right-nav-bar {
+    right: -1%;
+    opacity: 1;
+    transition: all ease-out 0.5s;
   }
   main .home {
     height: 62vh;
@@ -1381,6 +1424,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
 }
 @media only screen and (max-width: 930px) {
+  header {
+    padding: 1% 0;
+  }
   header nav .nav-menu {
     padding-top: 14%;
   }
@@ -1479,6 +1525,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   header nav .nav-menu {
     width: 65%;
     padding-top: 17%;
+    right: -70%;
   }
   header nav .nav-menu-open-button:hover {
     background-color: unset;
@@ -1488,6 +1535,11 @@ footer .footer-down .social-network .social-network-logo-container img {
   header nav .nav-menu-open-button:active {
     background-color: rgba(255, 255, 255, 0.568);
     border-radius: 10px;
+  }
+  header nav .show-right-nav-bar {
+    right: -1%;
+    opacity: 1;
+    transition: all ease-out 0.5s;
   }
   main {
     padding-top: 16%;
@@ -1672,8 +1724,20 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-down .social-network {
     width: 18%;
   }
+  .scroll-up {
+    width: 35px;
+    height: 35px;
+  }
+  .scroll-up:hover {
+    cursor: pointer;
+    transform: unset;
+    transition: unset;
+  }
 }
 @media only screen and (max-width: 750px) {
+  header {
+    padding: 2.5% 0;
+  }
   main .home {
     height: 105vh;
   }
@@ -1707,9 +1771,15 @@ footer .footer-down .social-network .social-network-logo-container img {
   header nav .nav-menu {
     padding-top: 20%;
     width: 75%;
+    right: -80%;
   }
   header nav .nav-menu .nav-menu-exit-button {
-    right: 7%;
+    right: 12%;
+  }
+  header nav .show-right-nav-bar {
+    right: -1%;
+    opacity: 1;
+    transition: all ease-out 0.5s;
   }
   main {
     padding-top: 19%;
@@ -1766,6 +1836,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
 }
 @media only screen and (max-width: 600px) {
+  header {
+    padding: 4.5% 0;
+  }
   header nav .nav-menu {
     padding: 23% 0 0 8%;
   }
@@ -1915,12 +1988,18 @@ footer .footer-down .social-network .social-network-logo-container img {
   header nav .nav-menu {
     width: 90%;
     padding: 25% 0 0 9%;
+    right: -95%;
   }
   header nav .nav-menu .nav-menu-exit-button {
     right: 10%;
   }
   header nav .nav-menu ul {
     height: 30%;
+  }
+  header nav .show-right-nav-bar {
+    right: -1%;
+    opacity: 1;
+    transition: all ease-out 0.5s;
   }
   main {
     padding-top: 24%;
@@ -2042,8 +2121,19 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-down .social-network {
     width: 32%;
   }
+  .scroll-up {
+    width: 30px;
+    height: 30px;
+    right: 20px;
+  }
+  .show-scroll-up-button {
+    bottom: 20px;
+  }
 }
 @media only screen and (max-width: 400px) {
+  header {
+    padding: 6.5% 0;
+  }
   header nav .nav-menu {
     padding-top: 30%;
   }
