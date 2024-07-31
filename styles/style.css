@@ -467,10 +467,34 @@ main .calculate .calculate-left .calculator button:hover img {
   transition: transform ease-out 0.15s;
 }
 
-main .calculate .calculate-left .bmi-message {
+main .calculate .calculate-left .bmi-message-container {
+  width: 100%;
+  height: 20px;
   margin-top: -4%;
+}
+main .calculate .calculate-left .bmi-message-container .bmi-message {
+  transform: translateY(-20px);
   opacity: 0;
   visibility: hidden;
+}
+main .calculate .calculate-left .bmi-message-container .incorrect-input,
+main .calculate .calculate-left .bmi-message-container .skinny,
+main .calculate .calculate-left .bmi-message-container .healthy,
+main .calculate .calculate-left .bmi-message-container .overweight {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all ease-out 0.2s;
+}
+main .calculate .calculate-left .bmi-message-container .incorrect-input,
+main .calculate .calculate-left .bmi-message-container .overweight {
+  color: rgb(221, 3, 3);
+}
+main .calculate .calculate-left .bmi-message-container .skinny {
+  color: rgb(235, 235, 0);
+}
+main .calculate .calculate-left .bmi-message-container .healthy {
+  color: hsl(79, 72%, 55%);
 }
 
 main .calculate .calculate-right {
@@ -566,10 +590,27 @@ footer .footer-up .footer-left .subscribe button:hover {
 footer .footer-up .footer-left .subscribe button:active {
   background-color: hsl(180, 4%, 98%);
 }
-footer .footer-up .footer-left .subscribe-message {
-  color: hsl(79, 72%, 55%);
-  visibility: hidden;
+footer .footer-up .footer-left .subscribe-message-container {
+  width: 100%;
+  height: 20px;
+}
+footer .footer-up .footer-left .subscribe-message-container .subscribe-message {
+  transform: translateY(-20px);
   opacity: 0;
+  visibility: hidden;
+}
+footer .footer-up .footer-left .subscribe-message-container .correct-email,
+footer .footer-up .footer-left .subscribe-message-container .wrong-email {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-out 0.2s;
+}
+footer .footer-up .footer-left .subscribe-message-container .correct-email {
+  color: hsl(79, 72%, 55%);
+}
+footer .footer-up .footer-left .subscribe-message-container .wrong-email {
+  color: rgb(221, 3, 3);
 }
 
 footer .footer-up .footer-right {
@@ -1325,7 +1366,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     right: -60%;
     z-index: 10;
     background-color: hsl(180, 12%, 8%);
-    border-left: white 2px solid;
+    border-left: hsl(180, 11%, 13%) 2px solid;
     flex-direction: column;
     justify-content: flex-start;
     padding: 12% 0 0 5%;
@@ -1699,6 +1740,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .calculate .calculate-left .calculator button:active img {
     transform: translateX(40%);
     transition-duration: 0s;
+  }
+  main .calculate .calculate-left .bmi-message-container .bmi-message {
+    text-align: left;
   }
   main .calculate .calculate-right {
     height: 48%;
@@ -2085,9 +2129,12 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .calculate .calculate-left .calculator button {
     width: 80%;
   }
-  main .calculate .calculate-left .bmi-message {
-    font-size: 0.9rem;
+  main .calculate .calculate-left .bmi-message-container {
     margin-top: -8%;
+    width: 80%;
+  }
+  main .calculate .calculate-left .bmi-message-container .bmi-message {
+    font-size: 0.9rem;
   }
   main .calculate .calculate-right {
     height: 43%;
@@ -2216,7 +2263,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .calculate .calculate-left .calculator button {
     height: 15%;
   }
-  main .calculate .calculate-left .bmi-message {
+  main .calculate .calculate-left .bmi-message-container {
     margin-top: -6%;
   }
   main .calculate .calculate-right {
@@ -2319,8 +2366,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .calculate .calculate-left .calculator button {
     width: 90%;
   }
-  main .calculate .calculate-left .bmi-message {
+  main .calculate .calculate-left .bmi-message-container {
     margin-top: -8%;
+    width: 90%;
   }
   footer .footer-up .footer-right .pricing-links {
     height: 24%;
