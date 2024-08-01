@@ -40,6 +40,9 @@ header nav .logo img {
   height: 80%;
   margin-right: 3%;
 }
+header nav .logo img:hover {
+  cursor: pointer;
+}
 header nav .logo p {
   font-size: 1.2rem;
   font-weight: 800;
@@ -136,6 +139,7 @@ main .home {
   height: 90vh;
   width: 100%;
   position: relative;
+  scroll-margin-top: 22vh;
 }
 main .home .home-left {
   width: 65%;
@@ -145,6 +149,9 @@ main .home .home-left {
   justify-content: space-between;
   position: absolute;
   z-index: 2;
+  left: -20%;
+  opacity: 0;
+  visibility: hidden;
 }
 main .home .home-left h1 {
   color: hsl(180, 4%, 98%);
@@ -190,11 +197,19 @@ main .home .home-left button:active {
   background-color: white;
   transition-duration: 0s;
 }
+main .home .reveal-home-left {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-out 1s;
+}
 main .home .home-right {
   width: 70%;
   height: 100%;
   position: relative;
-  right: -44%;
+  right: -64%;
+  opacity: 0;
+  visibility: hidden;
 }
 main .home .home-right img {
   width: 88%;
@@ -214,14 +229,29 @@ main .home .home-right .triangle {
   -webkit-clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
           clip-path: polygon(100% 12%, 5% 100%, 100% 100%);
 }
+main .home .reveal-home-right {
+  right: -44%;
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-out 1s;
+}
 
 main .partner-logo {
   display: flex;
   justify-content: space-around;
   margin: 5% 0 7% 0;
+  transform: translateY(15vh);
+  opacity: 0;
+  visibility: hidden;
 }
 main .partner-logo img {
   width: 16%;
+}
+main .reveal-partners {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-out 1s;
 }
 
 main .program h1 {
@@ -247,6 +277,7 @@ main .program {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  scroll-margin-top: 17vh;
 }
 main .program .program-types {
   display: flex;
@@ -315,6 +346,7 @@ main .choose-us {
   display: flex;
   margin-bottom: 10%;
   position: relative;
+  scroll-margin-top: 17vh;
 }
 main .choose-us .choose-us-left {
   height: 100%;
@@ -426,6 +458,7 @@ main .calculate .calculate-left .calculator .calculator-container .weight {
   align-items: center;
   padding: 3.5%;
   border: 2px solid hsl(79, 72%, 55%);
+  will-change: opacity;
 }
 main .calculate .calculate-left .calculator .calculator-container .height input,
 main .calculate .calculate-left .calculator .calculator-container .weight input {
@@ -455,6 +488,7 @@ main .calculate .calculate-left .calculator button {
   align-items: center;
   padding: 3.2% 0;
   font-weight: 800;
+  will-change: contents;
 }
 main .calculate .calculate-left .calculator button img {
   margin-left: 2%;
@@ -571,6 +605,7 @@ footer .footer-up .footer-left .subscribe input {
   border: 2px solid hsl(79, 72%, 55%);
   padding: 4%;
   width: 55%;
+  will-change: opacity;
 }
 footer .footer-up .footer-left .subscribe input:active {
   background-color: hsl(180, 12%, 8%);
@@ -1242,6 +1277,20 @@ footer .footer-down .social-network .social-network-logo-container img {
 .pricing-page .packages .diamond .offer p {
   color: hsl(82, 6%, 64%);
   background-image: url("../img/checkmark-in-circle.png");
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: hsl(79, 4%, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(79, 4%, 25%);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(79, 4%, 35%);
 }
 
 @media only screen and (max-width: 1280px) {
