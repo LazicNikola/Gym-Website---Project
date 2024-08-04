@@ -201,7 +201,7 @@ main .home .reveal-home-left {
   left: 0;
   opacity: 1;
   visibility: visible;
-  transition: all ease-out 1s;
+  transition: all ease-out 1.5s;
 }
 main .home .home-right {
   width: 70%;
@@ -233,25 +233,25 @@ main .home .reveal-home-right {
   right: -44%;
   opacity: 1;
   visibility: visible;
-  transition: all ease-out 1s;
+  transition: all ease-out 1.5s;
 }
 
 main .partner-logo {
   display: flex;
   justify-content: space-around;
   margin: 5% 0 7% 0;
-  transform: translateY(15vh);
+  transform: translateY(12vh);
   opacity: 0;
   visibility: hidden;
 }
 main .partner-logo img {
   width: 16%;
 }
-main .reveal-partners {
+main .show-main-element-bottom {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
-  transition: all ease-out 1s;
+  transition: all ease-out 1.5s;
 }
 
 main .program h1 {
@@ -278,6 +278,9 @@ main .program {
   justify-content: space-between;
   align-items: center;
   scroll-margin-top: 17vh;
+  transform: translateY(12vh);
+  opacity: 0;
+  visibility: hidden;
 }
 main .program .program-types {
   display: flex;
@@ -340,6 +343,12 @@ main .program .program-types div .arrow-right-gray:active {
   transition: 0s;
   border-radius: 500px;
 }
+main .show-main-element-bottom {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-out 1.5s;
+}
 
 main .choose-us {
   height: 80vh;
@@ -352,6 +361,9 @@ main .choose-us .choose-us-left {
   height: 100%;
   width: 50%;
   position: relative;
+  transform: translateX(-40%);
+  opacity: 0;
+  visibility: hidden;
 }
 main .choose-us .choose-us-left img {
   height: 100%;
@@ -374,6 +386,9 @@ main .choose-us .choose-us-right {
   width: 50%;
   height: 100%;
   padding: 6% 0;
+  transform: translateX(40%);
+  opacity: 0;
+  visibility: hidden;
 }
 main .choose-us .choose-us-right h1 {
   font-family: "Kaushan Script", cursive;
@@ -393,6 +408,13 @@ main .choose-us .choose-us-right p {
   color: hsl(180, 4%, 72%);
   font-weight: 500;
   margin: 5% 0;
+}
+main .choose-us .show-main-element-left,
+main .choose-us .show-main-element-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: all ease-out 1.5s;
 }
 
 main .choose-us .choose-us-right .achievements {
@@ -423,6 +445,9 @@ main .calculate .calculate-left {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 7%;
+  transform: translateX(-40%);
+  opacity: 0;
+  visibility: hidden;
 }
 main .calculate .calculate-left h1 {
   color: hsl(180, 4%, 98%);
@@ -535,12 +560,22 @@ main .calculate .calculate-right {
   height: 100%;
   width: 50%;
   position: relative;
+  transform: translateX(40%);
+  opacity: 0;
+  visibility: hidden;
 }
 main .calculate .calculate-right img {
   height: 100%;
   position: absolute;
   bottom: 0;
   left: 30%;
+}
+main .calculate .show-main-element-left,
+main .calculate .show-main-element-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: all ease-out 1.5s;
 }
 
 footer {
@@ -1642,11 +1677,13 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .home .home-left {
     width: 100%;
-    position: unset;
+    position: absolute;
     z-index: unset;
     align-items: center;
     text-align: center;
     height: 35%;
+    left: 0;
+    top: -10%;
   }
   main .home .home-left h1 {
     font-size: 2.8rem;
@@ -1662,11 +1699,18 @@ footer .footer-down .social-network .social-network-logo-container img {
     transform: translateX(40%);
     transition: transform ease-out 0.1s;
   }
+  main .home .reveal-home-left {
+    left: 0;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-out 1.5s;
+  }
   main .home .home-right {
     width: 100%;
     height: 50%;
     right: 0;
-    bottom: 0;
+    top: 60%;
     text-align: center;
   }
   main .home .home-right img {
@@ -1680,6 +1724,13 @@ footer .footer-down .social-network .social-network-logo-container img {
     right: -10%;
     -webkit-clip-path: polygon(100% 0, 28% 100%, 100% 100%);
             clip-path: polygon(100% 0, 28% 100%, 100% 100%);
+  }
+  main .home .reveal-home-right {
+    right: 0;
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-out 1.5s;
   }
   main .partner-logo {
     flex-wrap: wrap;

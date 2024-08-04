@@ -189,10 +189,41 @@ const revealHomeRight = () => {
 };
 window.addEventListener("load", revealHomeRight);
 
-// <============== PARTNER SECTION REVEAL ==============>
-const partners = document.querySelector(".partner-logo");
+// <=================== OTHER SECTIONS REVEAL ===================>
+const mainElementsRevealedBottom = document.querySelectorAll(
+  ".main-element-bottom"
+);
 
-const revealPartnerSection = () => {
-  partners.classList.add("reveal-partners");
+const mainElementsRevealedLeft =
+  document.querySelectorAll(".main-element-left");
+
+const mainElementsRevealedRight = document.querySelectorAll(
+  ".main-element-right"
+);
+
+const revealElements = () => {
+  const triggerHeight = window.innerHeight / 1.3;
+
+  mainElementsRevealedBottom.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < triggerHeight) {
+      element.classList.add("show-main-element-bottom");
+    }
+  });
+
+  mainElementsRevealedLeft.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < triggerHeight) {
+      element.classList.add("show-main-element-left");
+    }
+  });
+
+  mainElementsRevealedRight.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < triggerHeight) {
+      element.classList.add("show-main-element-right");
+    }
+  });
 };
-window.addEventListener("scroll", revealPartnerSection);
+
+window.addEventListener("scroll", revealElements);
