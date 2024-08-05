@@ -227,3 +227,19 @@ const revealElements = () => {
 };
 
 window.addEventListener("scroll", revealElements);
+
+const revealFooter = () => {
+  const footerElement = document.querySelector("footer");
+  const footerLeft = document.querySelector(".footer-left");
+  const footerRight = document.querySelector(".footer-right");
+
+  const triggerHeightFooter = window.innerHeight / 1.3;
+  const elementTop = footerElement.getBoundingClientRect().top;
+
+  if (elementTop < triggerHeightFooter) {
+    footerLeft.classList.add("show-footer-left");
+    footerRight.classList.add("show-footer-right");
+  }
+};
+
+window.addEventListener("scroll", revealFooter);

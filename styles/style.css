@@ -599,6 +599,9 @@ footer .footer-up .footer-left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-40%);
 }
 footer .footer-up .footer-left .footer-logo {
   display: flex;
@@ -682,12 +685,21 @@ footer .footer-up .footer-left .subscribe-message-container .correct-email {
 footer .footer-up .footer-left .subscribe-message-container .wrong-email {
   color: rgb(221, 3, 3);
 }
+footer .footer-up .show-footer-left {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: all ease-out 1.5s;
+}
 
 footer .footer-up .footer-right {
   width: 40%;
   height: 26vh;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40%);
 }
 footer .footer-up .footer-right .services-links,
 footer .footer-up .footer-right .pricing-links,
@@ -727,6 +739,12 @@ footer .footer-up .footer-right .services-links ul li a:hover,
 footer .footer-up .footer-right .pricing-links ul li a:hover,
 footer .footer-up .footer-right .company-links ul li a:hover {
   color: hsl(79, 72%, 55%);
+}
+footer .footer-up .show-footer-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: all ease-out 1.5s;
 }
 
 footer .footer-down {

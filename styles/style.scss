@@ -765,6 +765,9 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-40%);
       .footer-logo {
         display: flex;
         align-items: center;
@@ -836,6 +839,12 @@ footer {
         }
       }
     }
+    .show-footer-left {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: all ease-out 1.5s;
+    }
   }
 }
 
@@ -846,6 +855,9 @@ footer {
       height: 26vh;
       display: flex;
       justify-content: space-between;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40%);
       .services-links,
       .pricing-links,
       .company-links {
@@ -875,6 +887,12 @@ footer {
           }
         }
       }
+    }
+    .show-footer-right {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: all ease-out 1.5s;
     }
   }
 }
