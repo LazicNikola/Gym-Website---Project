@@ -395,7 +395,7 @@ main {
     display: flex;
     justify-content: space-around;
     margin: 5% 0 7% 0;
-    transform: translateY(12vh);
+    transform: translateY(-6vh);
     opacity: 0;
     visibility: hidden;
     img {
@@ -435,7 +435,7 @@ main {
     justify-content: space-between;
     align-items: center;
     scroll-margin-top: 17vh;
-    transform: translateY(12vh);
+    transform: translateY(-6vh);
     opacity: 0;
     visibility: hidden;
     .program-types {
@@ -1014,6 +1014,82 @@ footer {
     }
   }
 }
+.nav-bar-exit-background {
+  display: none;
+  position: fixed;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.575);
+  top: -5%;
+  right: -5%;
+  z-index: 18;
+}
+.register-form {
+  width: 30%;
+  height: 70%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  background-color: global.$body-color;
+  border: 3px solid hsla(180, 9%, 13%, 0.938);
+  z-index: 22;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2% 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-out 0.5s;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    @include input;
+    input {
+      border: 3px solid hsla(180, 9%, 13%, 0.938);
+      padding: 4%;
+    }
+    .register-message-container {
+      height: 18px;
+      margin-top: -8%;
+      visibility: hidden;
+      opacity: 0;
+      .register-message {
+        height: 16px;
+      }
+      .wrong-register-input {
+        color: rgb(221, 3, 3);
+      }
+    }
+    button {
+      all: unset;
+      font-weight: 800;
+      background-color: global.$first-color;
+      width: 50%;
+      height: 5%;
+      padding: 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        background-color: white;
+      }
+    }
+  }
+}
+.show-register-form {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all ease-out 0.5s;
+}
 ::-webkit-scrollbar {
   width: 12px;
   background-color: hsl(79, 4%, 15%);
@@ -1140,6 +1216,9 @@ footer {
         }
       }
     }
+  }
+  .register-form {
+    width: 35%;
   }
 }
 
@@ -1299,6 +1378,9 @@ footer {
         }
       }
     }
+  }
+  .register-form {
+    height: 60%;
   }
 }
 
@@ -1472,6 +1554,9 @@ footer {
     .calculate {
       height: 65vh;
     }
+  }
+  .register-form {
+    width: 40%;
   }
 }
 
@@ -1813,13 +1898,35 @@ footer {
     }
   }
   main {
+    .show-main-element-bottom {
+      transform: unset;
+      opacity: unset;
+      visibility: unset;
+      transition: unset;
+    }
     .partner-logo {
       margin-bottom: 17%;
+      transform: translateX(-40%);
+    }
+    .show-partners-element {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: all ease-out 1.5s;
     }
   }
   main {
     .program {
       height: 240vh;
+      transform: unset;
+      opacity: unset;
+      visibility: unset;
+      h1,
+      h2 {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-40%);
+      }
       .program-types {
         flex-direction: column;
         justify-content: space-between;
@@ -1830,6 +1937,23 @@ footer {
           height: 23%;
           padding: 10%;
         }
+        .training-program {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(-40%);
+        }
+        .show-each-program {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+          transition: all ease-out 1.5s;
+        }
+      }
+      .show-each-program {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        transition: all ease-out 1.5s;
       }
     }
   }
@@ -1866,6 +1990,10 @@ footer {
         width: 20%;
       }
     }
+  }
+  .register-form {
+    width: 48%;
+    height: 55%;
   }
 }
 
@@ -2014,13 +2142,25 @@ footer {
           }
         }
       }
+      .show-footer-right {
+        opacity: unset;
+        visibility: unset;
+        transform: unset;
+        transition: unset;
+      }
       .footer-right {
         flex-direction: column;
         height: 64%;
+        opacity: unset;
+        visibility: unset;
+        transform: unset;
         .services-links,
         .pricing-links,
         .company-links {
           height: 29%;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(40%);
           ul {
             height: 73%;
             justify-content: space-between;
@@ -2035,6 +2175,12 @@ footer {
             height: 66%;
           }
         }
+        .show-each-footer-link {
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(0);
+          transition: all ease-out 1.5s;
+        }
       }
     }
     .footer-down {
@@ -2045,6 +2191,10 @@ footer {
         width: 26%;
       }
     }
+  }
+  .register-form {
+    width: 58%;
+    height: 55%;
   }
 }
 
@@ -2236,6 +2386,15 @@ footer {
   .show-scroll-up-button {
     bottom: 20px;
   }
+  .register-form {
+    width: 65%;
+    form {
+      button {
+        width: 70%;
+        height: 8%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -2385,6 +2544,9 @@ footer {
       }
     }
   }
+  .register-form {
+    width: 75%;
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -2509,6 +2671,9 @@ footer {
       }
     }
   }
+  .register-form {
+    width: 85%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -2568,6 +2733,9 @@ footer {
         font-size: 0.75rem;
       }
     }
+  }
+  .register-form {
+    width: 92%;
   }
 }
 

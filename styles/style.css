@@ -240,7 +240,7 @@ main .partner-logo {
   display: flex;
   justify-content: space-around;
   margin: 5% 0 7% 0;
-  transform: translateY(12vh);
+  transform: translateY(-6vh);
   opacity: 0;
   visibility: hidden;
 }
@@ -278,7 +278,7 @@ main .program {
   justify-content: space-between;
   align-items: center;
   scroll-margin-top: 17vh;
-  transform: translateY(12vh);
+  transform: translateY(-6vh);
   opacity: 0;
   visibility: hidden;
 }
@@ -1332,6 +1332,97 @@ footer .footer-down .social-network .social-network-logo-container img {
   background-image: url("../img/checkmark-in-circle.png");
 }
 
+.nav-bar-exit-background {
+  display: none;
+  position: fixed;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.575);
+  top: -5%;
+  right: -5%;
+  z-index: 18;
+}
+
+.register-form {
+  width: 30%;
+  height: 70%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  background-color: hsl(180, 12%, 8%);
+  border: 3px solid hsla(180, 9%, 13%, 0.938);
+  z-index: 22;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2% 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-out 0.5s;
+}
+.register-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+}
+.register-form form input {
+  all: unset;
+  color: hsl(180, 4%, 72%);
+  width: 100%;
+}
+.register-form form input::-moz-placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+.register-form form input::placeholder {
+  color: hsl(180, 4%, 72%);
+  font-weight: 500;
+}
+.register-form form input {
+  border: 3px solid hsla(180, 9%, 13%, 0.938);
+  padding: 4%;
+}
+.register-form form .register-message-container {
+  height: 18px;
+  margin-top: -8%;
+  visibility: hidden;
+  opacity: 0;
+}
+.register-form form .register-message-container .register-message {
+  height: 16px;
+}
+.register-form form .register-message-container .wrong-register-input {
+  color: rgb(221, 3, 3);
+}
+.register-form form button {
+  all: unset;
+  font-weight: 800;
+  background-color: hsl(79, 72%, 55%);
+  width: 50%;
+  height: 5%;
+  padding: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.register-form form button:hover {
+  cursor: pointer;
+}
+.register-form form button:active {
+  background-color: white;
+}
+
+.show-register-form {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all ease-out 0.5s;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   background-color: hsl(79, 4%, 15%);
@@ -1425,6 +1516,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .calculate .calculate-left .calculator {
     width: 80%;
+  }
+  .register-form {
+    width: 35%;
   }
 }
 @media only screen and (max-width: 1140px) {
@@ -1538,6 +1632,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .calculate .calculate-left h1 {
     font-size: 2.7rem;
+  }
+  .register-form {
+    height: 60%;
   }
 }
 @media only screen and (max-width: 980px) {
@@ -1662,6 +1759,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   main .calculate {
     height: 65vh;
+  }
+  .register-form {
+    width: 40%;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -1955,11 +2055,33 @@ footer .footer-down .social-network .social-network-logo-container img {
   main .home .home-right img {
     width: 70%;
   }
+  main .show-main-element-bottom {
+    transform: unset;
+    opacity: unset;
+    visibility: unset;
+    transition: unset;
+  }
   main .partner-logo {
     margin-bottom: 17%;
+    transform: translateX(-40%);
+  }
+  main .show-partners-element {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: all ease-out 1.5s;
   }
   main .program {
     height: 240vh;
+    transform: unset;
+    opacity: unset;
+    visibility: unset;
+  }
+  main .program h1,
+  main .program h2 {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-40%);
   }
   main .program .program-types {
     flex-direction: column;
@@ -1971,6 +2093,23 @@ footer .footer-down .social-network .social-network-logo-container img {
     width: 100%;
     height: 23%;
     padding: 10%;
+  }
+  main .program .program-types .training-program {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-40%);
+  }
+  main .program .program-types .show-each-program {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: all ease-out 1.5s;
+  }
+  main .program .show-each-program {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: all ease-out 1.5s;
   }
   main .choose-us {
     height: 130vh;
@@ -1995,6 +2134,10 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   footer .footer-down .social-network {
     width: 20%;
+  }
+  .register-form {
+    width: 48%;
+    height: 55%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2111,14 +2254,26 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-up .footer-left .subscribe button {
     width: 90%;
   }
+  footer .footer-up .show-footer-right {
+    opacity: unset;
+    visibility: unset;
+    transform: unset;
+    transition: unset;
+  }
   footer .footer-up .footer-right {
     flex-direction: column;
     height: 64%;
+    opacity: unset;
+    visibility: unset;
+    transform: unset;
   }
   footer .footer-up .footer-right .services-links,
   footer .footer-up .footer-right .pricing-links,
   footer .footer-up .footer-right .company-links {
     height: 29%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(40%);
   }
   footer .footer-up .footer-right .services-links ul,
   footer .footer-up .footer-right .pricing-links ul,
@@ -2137,6 +2292,12 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-up .footer-right .pricing-links ul {
     height: 66%;
   }
+  footer .footer-up .footer-right .show-each-footer-link {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all ease-out 1.5s;
+  }
   footer .footer-down {
     height: 7%;
     flex-direction: column-reverse;
@@ -2144,6 +2305,10 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   footer .footer-down .social-network {
     width: 26%;
+  }
+  .register-form {
+    width: 58%;
+    height: 55%;
   }
 }
 @media only screen and (max-width: 470px) {
@@ -2294,6 +2459,13 @@ footer .footer-down .social-network .social-network-logo-container img {
   .show-scroll-up-button {
     bottom: 20px;
   }
+  .register-form {
+    width: 65%;
+  }
+  .register-form form button {
+    width: 70%;
+    height: 8%;
+  }
 }
 @media only screen and (max-width: 400px) {
   header {
@@ -2420,6 +2592,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-down .social-network {
     width: 40%;
   }
+  .register-form {
+    width: 75%;
+  }
 }
 @media only screen and (max-width: 350px) {
   header nav .logo {
@@ -2503,6 +2678,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   footer .footer-down .social-network {
     width: 45%;
   }
+  .register-form {
+    width: 85%;
+  }
 }
 @media only screen and (max-width: 320px) {
   header nav .nav-menu {
@@ -2539,6 +2717,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   footer .footer-down p {
     font-size: 0.75rem;
+  }
+  .register-form {
+    width: 92%;
   }
 }
 @media only screen and (max-width: 300px) {

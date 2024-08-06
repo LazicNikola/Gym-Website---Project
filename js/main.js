@@ -26,9 +26,13 @@ window.addEventListener("scroll", showTopHeaderBackground);
 // <=========== RIGHT NAV BAR OPEN ===========>
 const navBarOpenButton = document.querySelector(".nav-menu-open-button");
 const rightNavBar = document.querySelector(".nav-menu");
+const rightNavBarExitBackground = document.querySelector(
+  ".nav-bar-exit-background"
+);
 const showRightNavBar = () => {
   if (rightNavBar) {
     rightNavBar.classList.add("show-right-nav-bar");
+    rightNavBarExitBackground.style.display = "block";
   }
 };
 navBarOpenButton.addEventListener("click", showRightNavBar);
@@ -38,9 +42,11 @@ const navBarExitButton = document.querySelector(".nav-menu-exit-button");
 const navLinks = document.querySelectorAll(".nav-link");
 const exitRightNavBar = () => {
   rightNavBar.classList.remove("show-right-nav-bar");
+  rightNavBarExitBackground.style.display = "none";
 };
 navBarExitButton.addEventListener("click", exitRightNavBar);
 navLinks.forEach((e) => e.addEventListener("click", exitRightNavBar));
+rightNavBarExitBackground.addEventListener("click", exitRightNavBar);
 
 // <=============================  NAV BAR SCROLL-TO =============================>
 const homeLink = document.querySelector(".nav-home");
@@ -69,6 +75,42 @@ programLink.addEventListener("click", (e) =>
 chooseUsLink.addEventListener("click", (e) =>
   scrollToSectionOfPage(e, chooseUsSection)
 );
+
+// <============================= NAV BAR REGISTER =============================>
+const registerButton = document.querySelector(".register-button");
+const registerForm = document.querySelector(".register-form");
+const registerFormOriginalClass = registerForm.className;
+const registration = () => {
+  registerForm.classList.add("show-register-form");
+  rightNavBarExitBackground.style.display = "block";
+};
+registerButton.addEventListener("click", registration);
+
+const exitRegistration = () => {
+  registerForm.classList.remove("show-register-form");
+  rightNavBarExitBackground.style.display = "none";
+  registerForm.className = registerFormOriginalClass;
+};
+rightNavBarExitBackground.addEventListener("click", exitRegistration);
+
+// const submitRegisterButton = document.querySelector(".submit-register-button");
+// const submitingRegisterForm = (e) => {
+//   e.preventDefault();
+//   const firstName = document.querySelector("#first-name");
+//   const lastName = document.querySelector("#last-name");
+//   const registerEmail = document.querySelector("#register-email");
+//   const registerMessage = document.querySelector(".register-message");
+
+//   if (
+//     firstName.value === "" ||
+//     lastName.value === "" ||
+//     registerEmail.value === ""
+//   ) {
+//     registerMessage.textContent = "You have to fill in all fields";
+//     registerMessage.classList.add("wrong-register-input");
+//   }
+// };
+// submitRegisterButton.addEventListener("click", submitingRegisterForm);
 
 //
 //
@@ -174,8 +216,8 @@ scrollUpButton.addEventListener("click", scrollToTop);
 //
 //
 //
-// <============================= REVEAL SECTIONS =============================>
-// <============== HOME SECTION REVEAL ==============>
+// <======================== ONLOAD/ONSCROLL REVEAL SECTIONS ========================>
+// <============== HOME SECTION ONLOAD REVEAL ==============>
 const homeLeft = document.querySelector(".home-left");
 const homeRight = document.querySelector(".home-right");
 
@@ -189,7 +231,8 @@ const revealHomeRight = () => {
 };
 window.addEventListener("load", revealHomeRight);
 
-// <=================== OTHER SECTIONS REVEAL ===================>
+// <=================== OTHER SECTIONS ONSCROLL REVEAL ===================>
+// <============== MAIN ELEMENTS ONSCROLL REVEAL ==============>
 const mainElementsRevealedBottom = document.querySelectorAll(
   ".main-element-bottom"
 );
@@ -201,7 +244,7 @@ const mainElementsRevealedRight = document.querySelectorAll(
   ".main-element-right"
 );
 
-const revealElements = () => {
+const revealMainElements = () => {
   const triggerHeight = window.innerHeight / 1.3;
 
   mainElementsRevealedBottom.forEach((element) => {
@@ -226,8 +269,9 @@ const revealElements = () => {
   });
 };
 
-window.addEventListener("scroll", revealElements);
+window.addEventListener("scroll", revealMainElements);
 
+// <============== FOOTER ELEMENT ONSCROLL REVEAL ==============>
 const revealFooter = () => {
   const footerElement = document.querySelector("footer");
   const footerLeft = document.querySelector(".footer-left");
@@ -243,3 +287,43 @@ const revealFooter = () => {
 };
 
 window.addEventListener("scroll", revealFooter);
+
+// <=========== PARTNERS ELEMENT ONSCROLL REVEAL AT 680PX MAX-WIDTH ===========>
+const revealPartnersElementInMediaQuery = () => {
+  const partnersElement = document.querySelector(".partner-logo");
+  const triggerHeightPartners = window.innerHeight / 1.3;
+
+  const partnersElementTop = partnersElement.getBoundingClientRect().top;
+  if (partnersElementTop < triggerHeightPartners) {
+    partnersElement.classList.add("show-partners-element");
+  }
+};
+window.addEventListener("scroll", revealPartnersElementInMediaQuery);
+
+// <=========== PROGRAM ELEMENTS ONSCROLL REVEAL AT 680PX MAX-WIDTH ===========>
+const revealEachProgramInMediaQuery = () => {
+  const trainingPrograms = document.querySelectorAll(".training-program");
+  const triggerHeightPrograms = window.innerHeight / 1.3;
+
+  trainingPrograms.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < triggerHeightPrograms) {
+      element.classList.add("show-each-program");
+    }
+  });
+};
+window.addEventListener("scroll", revealEachProgramInMediaQuery);
+
+// <=========== FOOTER LINK GROUPS ONSCROLL REVEAL AT 530PX MAX-WIDTH ===========>
+const revealEachFooterLinksGroup = () => {
+  const footerLinks = document.querySelectorAll(".footer-links");
+  const triggerHeightFooterLinks = window.innerHeight / 1.3;
+
+  footerLinks.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop < triggerHeightFooterLinks) {
+      element.classList.add("show-each-footer-link");
+    }
+  });
+};
+window.addEventListener("scroll", revealEachFooterLinksGroup);

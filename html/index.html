@@ -76,10 +76,10 @@
 
       <!--==================== PROGRAM ====================-->
       <div class="program main-element-bottom">
-        <h1>Our Program</h1>
-        <h2><span>BUILD YOUR</span> BEST BODY</h2>
+        <h1 class="training-program">Our Program</h1>
+        <h2 class="training-program"><span>BUILD YOUR</span> BEST BODY</h2>
         <div class="program-types">
-          <div class="flex-muscle">
+          <div class="flex-muscle training-program">
             <div class="program-image-container">
               <img src="../img/program1.png" alt="gym dumbbell" />
             </div>
@@ -90,7 +90,7 @@
             </p>
             <button class="arrow-right-gray"></button>
           </div>
-          <div class="cardio-exercise">
+          <div class="cardio-exercise training-program">
             <div class="program-image-container">
               <img src="../img/program2.png" alt="vitality watch" />
             </div>
@@ -101,7 +101,7 @@
             </p>
             <button class="arrow-right-gray"></button>
           </div>
-          <div class="basic-yoga">
+          <div class="basic-yoga training-program">
             <div class="program-image-container">
               <img src="../img/program3.png" alt="man doing yoga" />
             </div>
@@ -112,7 +112,7 @@
             </p>
             <button class="arrow-right-gray"></button>
           </div>
-          <div class="weight-lifting">
+          <div class="weight-lifting training-program">
             <div class="program-image-container">
               <img src="../img/program4.png" alt="gym kettlebell" />
             </div>
@@ -223,7 +223,7 @@
           </div>
         </div>
         <div class="footer-right">
-          <div class="services-links">
+          <div class="services-links footer-links">
             <h2>SERVICES</h2>
             <ul>
               <li><a href="flex muscle">Flex Muscle</a></li>
@@ -232,7 +232,7 @@
               <li><a href="weight lifting">Weight Lifting</a></li>
             </ul>
           </div>
-          <div class="pricing-links">
+          <div class="pricing-links footer-links">
             <h2>PRICING</h2>
             <ul>
               <li><a href="basic">Basic</a></li>
@@ -240,7 +240,7 @@
               <li><a href="diamond">Diamond</a></li>
             </ul>
           </div>
-          <div class="company-links">
+          <div class="company-links footer-links">
             <h2>COMPANY</h2>
             <ul>
               <li><a href="about us">About Us</a></li>
@@ -273,5 +273,35 @@
       </div>
     </footer>
     <button class="scroll-up"></button>
+    <div class="nav-bar-exit-background"></div>
+    <div class="register-form">
+      <form>
+        <input
+          type="text"
+          placeholder="First Name"
+          name="first-name"
+          id="first-name"
+          class="register-input"
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="last-name"
+          id="last-name"
+          class="register-input"
+        />
+        <input
+          type="email"
+          name="register-email"
+          id="register-email"
+          placeholder="Email"
+          class="register-input"
+        />
+        <div class="register-message-container">
+          <p class="register-message"></p>
+        </div>
+        <button class="submit-register-button" type="submit">Register</button>
+      </form>
+    </div>
   </body>
 </html>
