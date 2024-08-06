@@ -1340,7 +1340,7 @@ footer .footer-down .social-network .social-network-logo-container img {
   background-color: rgba(0, 0, 0, 0.575);
   top: -5%;
   right: -5%;
-  z-index: 18;
+  z-index: 21;
 }
 
 .register-form {
@@ -1389,14 +1389,28 @@ footer .footer-down .social-network .social-network-logo-container img {
 .register-form form .register-message-container {
   height: 18px;
   margin-top: -8%;
-  visibility: hidden;
-  opacity: 0;
+  width: 100%;
+  text-align: left;
 }
 .register-form form .register-message-container .register-message {
-  height: 16px;
+  font-weight: 500;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10vh);
+  transition: all ease-out 0.5s;
+}
+.register-form form .register-message-container .wrong-register-input,
+.register-form form .register-message-container .correct-register-input {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out 0.5s;
 }
 .register-form form .register-message-container .wrong-register-input {
   color: rgb(221, 3, 3);
+}
+.register-form form .register-message-container .correct-register-input {
+  color: hsl(79, 72%, 55%);
 }
 .register-form form button {
   all: unset;
@@ -1635,6 +1649,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   .register-form {
     height: 60%;
+  }
+  .nav-bar-exit-background {
+    z-index: 18;
   }
 }
 @media only screen and (max-width: 980px) {
@@ -2136,7 +2153,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     width: 20%;
   }
   .register-form {
-    width: 48%;
+    width: 50%;
     height: 55%;
   }
 }
@@ -2460,7 +2477,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     bottom: 20px;
   }
   .register-form {
-    width: 65%;
+    width: 68%;
   }
   .register-form form button {
     width: 70%;
@@ -2593,7 +2610,7 @@ footer .footer-down .social-network .social-network-logo-container img {
     width: 40%;
   }
   .register-form {
-    width: 75%;
+    width: 78%;
   }
 }
 @media only screen and (max-width: 350px) {
@@ -2680,6 +2697,9 @@ footer .footer-down .social-network .social-network-logo-container img {
   }
   .register-form {
     width: 85%;
+  }
+  .register-form form .register-message-container .register-message {
+    font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 320px) {

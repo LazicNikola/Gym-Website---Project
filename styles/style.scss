@@ -1022,7 +1022,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.575);
   top: -5%;
   right: -5%;
-  z-index: 18;
+  z-index: 21;
 }
 .register-form {
   width: 30%;
@@ -1056,13 +1056,27 @@ footer {
     .register-message-container {
       height: 18px;
       margin-top: -8%;
-      visibility: hidden;
-      opacity: 0;
+      width: 100%;
+      text-align: left;
       .register-message {
-        height: 16px;
+        font-weight: 500;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10vh);
+        transition: all ease-out 0.5s;
+      }
+      .wrong-register-input,
+      .correct-register-input {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all ease-out 0.5s;
       }
       .wrong-register-input {
         color: rgb(221, 3, 3);
+      }
+      .correct-register-input {
+        color: global.$first-color;
       }
     }
     button {
@@ -1381,6 +1395,9 @@ footer {
   }
   .register-form {
     height: 60%;
+  }
+  .nav-bar-exit-background {
+    z-index: 18;
   }
 }
 
@@ -1992,7 +2009,7 @@ footer {
     }
   }
   .register-form {
-    width: 48%;
+    width: 50%;
     height: 55%;
   }
 }
@@ -2387,7 +2404,7 @@ footer {
     bottom: 20px;
   }
   .register-form {
-    width: 65%;
+    width: 68%;
     form {
       button {
         width: 70%;
@@ -2545,7 +2562,7 @@ footer {
     }
   }
   .register-form {
-    width: 75%;
+    width: 78%;
   }
 }
 
@@ -2673,6 +2690,13 @@ footer {
   }
   .register-form {
     width: 85%;
+    form {
+      .register-message-container {
+        .register-message {
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
 }
 

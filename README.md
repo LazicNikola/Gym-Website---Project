@@ -1,5 +1,6 @@
 - Responsive Gym Website Design Using HTML CSS & JavaScript.
 - Contains animations when scrolling.
 - Includes a form to calculate body mass index.
-- Includes a form to send emails.
+- Includes a form to subscribe.
+- Includes a form to register.
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.

@@ -63,6 +63,8 @@ const programSection = document.querySelector(".program");
 const chooseUsLink = document.querySelector(".nav-choose-us");
 const chooseUsSection = document.querySelector(".choose-us");
 
+const footerServicesLinks = document.querySelectorAll(".footer-services-links");
+
 const scrollToSectionOfPage = (e, section) => {
   e.preventDefault();
   section.scrollIntoView({ behavior: "smooth" });
@@ -76,8 +78,16 @@ chooseUsLink.addEventListener("click", (e) =>
   scrollToSectionOfPage(e, chooseUsSection)
 );
 
+// <=================  FOOTER SCROLL-TO =================>
+footerServicesLinks.forEach((element) => {
+  element.addEventListener("click", (e) =>
+    scrollToSectionOfPage(e, programSection)
+  );
+});
+
 // <============================= NAV BAR REGISTER =============================>
 const registerButton = document.querySelector(".register-button");
+const getStartedButton = document.querySelector(".get-started");
 const registerForm = document.querySelector(".register-form");
 const registerFormOriginalClass = registerForm.className;
 const registration = () => {
@@ -85,6 +95,7 @@ const registration = () => {
   rightNavBarExitBackground.style.display = "block";
 };
 registerButton.addEventListener("click", registration);
+getStartedButton.addEventListener("click", registration);
 
 const exitRegistration = () => {
   registerForm.classList.remove("show-register-form");
@@ -93,24 +104,47 @@ const exitRegistration = () => {
 };
 rightNavBarExitBackground.addEventListener("click", exitRegistration);
 
-// const submitRegisterButton = document.querySelector(".submit-register-button");
-// const submitingRegisterForm = (e) => {
-//   e.preventDefault();
-//   const firstName = document.querySelector("#first-name");
-//   const lastName = document.querySelector("#last-name");
-//   const registerEmail = document.querySelector("#register-email");
-//   const registerMessage = document.querySelector(".register-message");
+const submitRegisterButton = document.querySelector(".submit-register-button");
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const regexString = /^[a-zA-Z]+$/;
+const submitingRegisterForm = (e) => {
+  e.preventDefault();
+  const firstName = document.querySelector("#first-name");
+  const lastName = document.querySelector("#last-name");
+  const registerEmail = document.querySelector("#register-email");
+  const registerMessage = document.querySelector(".register-message");
+  const originalClassRegisterMessage = registerMessage.className;
 
-//   if (
-//     firstName.value === "" ||
-//     lastName.value === "" ||
-//     registerEmail.value === ""
-//   ) {
-//     registerMessage.textContent = "You have to fill in all fields";
-//     registerMessage.classList.add("wrong-register-input");
-//   }
-// };
-// submitRegisterButton.addEventListener("click", submitingRegisterForm);
+  if (
+    firstName.value.trim() === "" ||
+    !regexString.test(firstName.value) ||
+    lastName.value.trim() === "" ||
+    !regexString.test(lastName.value) ||
+    !regexEmail.test(registerEmail.value)
+  ) {
+    registerMessage.textContent = "Your input is incorrect";
+    registerMessage.classList.add("wrong-register-input");
+    registerMessage.classList.remove("correct-register-input");
+    setTimeout(() => {
+      registerMessage.textContent = "";
+      registerMessage.className = originalClassRegisterMessage;
+    }, 3000);
+  } else {
+    registerMessage.textContent = "You registered successfully!";
+    registerMessage.classList.add("correct-register-input");
+    registerMessage.classList.remove("wrong-register-input");
+    setTimeout(() => {
+      registerMessage.textContent = "";
+      registerMessage.className = originalClassRegisterMessage;
+      registerForm.className = registerFormOriginalClass;
+      firstName.value = "";
+      lastName.value = "";
+      registerEmail.value = "";
+      rightNavBarExitBackground.style.display = "none";
+    }, 2000);
+  }
+};
+submitRegisterButton.addEventListener("click", submitingRegisterForm);
 
 //
 //
@@ -161,6 +195,8 @@ const calculateBmi = (e) => {
     setTimeout(() => {
       bmiMessage.textContent = "";
       bmiMessage.className = originalClassBmi;
+      heightInput.value = "";
+      weightInput.value = "";
     }, 4000);
   }
 };
@@ -175,12 +211,14 @@ const subscribing = (e) => {
   e.preventDefault();
   const emailInput = document.querySelector("#email");
   const subscribeMessage = document.querySelector(".subscribe-message");
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const originalClassEmail = subscribeMessage.className;
   if (regexEmail.test(emailInput.value)) {
     subscribeMessage.classList.add("correct-email");
     subscribeMessage.classList.remove("wrong-email");
     subscribeMessage.textContent = "You have successfully subscribed!";
+    setTimeout(() => {
+      emailInput.value = "";
+    }, 3000);
   } else if (emailInput.value === "") {
     subscribeMessage.classList.add("wrong-email");
     subscribeMessage.classList.remove("correct-email");
