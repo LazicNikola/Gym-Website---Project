@@ -974,13 +974,29 @@ footer {
     font-size: 2.8rem;
     margin-bottom: 8%;
   }
+  h1,
+  h2 {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-40%);
+  }
+  .show-pricing-headings {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all ease-out 1s;
+  }
 }
 
 .pricing-page {
+  overflow: hidden;
   .packages {
     display: flex;
     justify-content: space-around;
     height: 80vh;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20%);
     .basic {
       @include pricing-all-packages;
       @include pricing-gray-packages;
@@ -1013,7 +1029,16 @@ footer {
       @include pricing-gray-packages;
     }
   }
+  .show-all-packages {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all ease-out 1s;
+  }
 }
+
+// <==================== NAV-BAR EXIT BACKGROUND ====================>
+
 .nav-bar-exit-background {
   display: none;
   position: fixed;
@@ -1024,6 +1049,9 @@ footer {
   right: -5%;
   z-index: 21;
 }
+
+// <========================= REGISTER FORM =========================>
+
 .register-form {
   width: 30%;
   height: 70%;
@@ -1033,7 +1061,7 @@ footer {
   transform: translate(-50%, -10%);
   background-color: global.$body-color;
   border: 3px solid hsla(180, 9%, 13%, 0.938);
-  z-index: 22;
+  z-index: 25;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1062,7 +1090,7 @@ footer {
         font-weight: 500;
         visibility: hidden;
         opacity: 0;
-        transform: translateY(10vh);
+        transform: translateY(-5vh);
         transition: all ease-out 0.5s;
       }
       .wrong-register-input,
@@ -1104,6 +1132,9 @@ footer {
   transform: translate(-50%, -50%);
   transition: all ease-out 0.5s;
 }
+
+// <===================== SCROLLBAR STYLE =====================>
+
 ::-webkit-scrollbar {
   width: 12px;
   background-color: hsl(79, 4%, 15%);
@@ -1114,6 +1145,45 @@ footer {
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: hsl(79, 4%, 35%);
+}
+
+// <=================== TRAINING PROGRAM PAGES ===================>
+
+.training-page {
+  background-color: global.$body-color;
+  h1 {
+    @include green-heading;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 2.8rem;
+    transform: translateY(-20%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  .training-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 45%;
+    height: 55%;
+    border: 4px solid hsla(180, 9%, 13%, 0.938);
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .show-tr-prog-heading {
+    transform: translateY(0);
+  }
+  .show-tr-prog-video {
+    transform: translate(-50%, -35%);
+  }
+  .show-tr-prog-heading,
+  .show-tr-prog-video {
+    visibility: visible;
+    opacity: 1;
+    transition: all ease-out 1s;
+  }
 }
 
 // <============================= MEDIA QUERY =============================>
@@ -1179,6 +1249,12 @@ footer {
           left: -13%;
         }
       }
+    }
+  }
+  .training-page {
+    .training-video {
+      width: 52%;
+      height: 60%;
     }
   }
 }
@@ -1286,6 +1362,12 @@ footer {
       .footer-right {
         width: 45%;
       }
+    }
+  }
+  .training-page {
+    .training-video {
+      width: 52%;
+      height: 53%;
     }
   }
 }
@@ -1398,6 +1480,17 @@ footer {
   }
   .nav-bar-exit-background {
     z-index: 18;
+  }
+  .exit-bg-z-index {
+    z-index: 24;
+  }
+  .training-page {
+    .training-video {
+      width: 58%;
+    }
+    .show-tr-prog-video {
+      transform: translate(-50%, -45%);
+    }
   }
 }
 
@@ -1533,6 +1626,14 @@ footer {
       .social-network {
         width: 14%;
       }
+    }
+  }
+  .training-page {
+    .training-video {
+      width: 63%;
+    }
+    .show-tr-prog-video {
+      transform: translate(-50%, -52%);
     }
   }
 }
@@ -1835,6 +1936,12 @@ footer {
       transition: unset;
     }
   }
+  .training-page {
+    .training-video {
+      width: 70%;
+      height: 48%;
+    }
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -2011,6 +2118,15 @@ footer {
   .register-form {
     width: 50%;
     height: 55%;
+  }
+  .training-page {
+    .training-video {
+      width: 80%;
+      height: 48%;
+    }
+    .show-tr-prog-video {
+      transform: translate(-50%, -58%);
+    }
   }
 }
 
@@ -2213,6 +2329,16 @@ footer {
     width: 58%;
     height: 55%;
   }
+  .training-page {
+    h1 {
+      font-size: 2.3rem;
+      margin-top: 8%;
+    }
+    .training-video {
+      width: 90%;
+      height: 44%;
+    }
+  }
 }
 
 @media only screen and (max-width: 470px) {
@@ -2412,6 +2538,15 @@ footer {
       }
     }
   }
+  .training-page {
+    h1 {
+      margin-top: 14%;
+    }
+    .training-video {
+      width: 95%;
+      height: 40%;
+    }
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -2564,6 +2699,14 @@ footer {
   .register-form {
     width: 78%;
   }
+  .training-page {
+    h1 {
+      margin-top: 24%;
+    }
+    .training-video {
+      height: 35%;
+    }
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -2698,6 +2841,14 @@ footer {
       }
     }
   }
+  .training-page {
+    h1 {
+      margin-top: 30%;
+    }
+    .training-video {
+      height: 31%;
+    }
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -2760,6 +2911,11 @@ footer {
   }
   .register-form {
     width: 92%;
+  }
+  .training-page {
+    h1 {
+      margin-top: 33%;
+    }
   }
 }
 

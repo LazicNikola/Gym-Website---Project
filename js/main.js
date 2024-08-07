@@ -93,6 +93,7 @@ const registerFormOriginalClass = registerForm.className;
 const registration = () => {
   registerForm.classList.add("show-register-form");
   rightNavBarExitBackground.style.display = "block";
+  rightNavBarExitBackground.classList.add("exit-bg-z-index");
 };
 registerButton.addEventListener("click", registration);
 getStartedButton.addEventListener("click", registration);
@@ -100,6 +101,7 @@ getStartedButton.addEventListener("click", registration);
 const exitRegistration = () => {
   registerForm.classList.remove("show-register-form");
   rightNavBarExitBackground.style.display = "none";
+  rightNavBarExitBackground.classList.remove("exit-bg-z-index");
   registerForm.className = registerFormOriginalClass;
 };
 rightNavBarExitBackground.addEventListener("click", exitRegistration);
@@ -141,6 +143,8 @@ const submitingRegisterForm = (e) => {
       lastName.value = "";
       registerEmail.value = "";
       rightNavBarExitBackground.style.display = "none";
+      rightNavBarExitBackground.classList.remove("exit-bg-z-index");
+      rightNavBar.classList.remove("show-right-nav-bar");
     }, 2000);
   }
 };
