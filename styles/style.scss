@@ -449,6 +449,7 @@ main {
         padding: 2.8%;
         border-radius: 3px;
         position: relative;
+        scroll-margin-top: 30vh;
         &:hover {
           background-color: global.$first-color;
           h3,
@@ -2944,6 +2945,108 @@ footer {
     .footer-down {
       p {
         font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  header nav .nav-menu {
+    padding-top: 10%;
+  }
+  main {
+    .home {
+      height: 120vh;
+    }
+    .program {
+      height: 160vh;
+    }
+    .choose-us {
+      height: 170vh;
+    }
+    .calculate {
+      height: 130vh;
+    }
+  }
+  footer {
+    height: 115vh;
+  }
+  .register-form {
+    height: 100%;
+  }
+  .training-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      text-align: unset;
+      margin-bottom: 5%;
+    }
+    .training-video {
+      position: unset;
+      width: 75%;
+      height: 90vh;
+      margin-bottom: 5%;
+      transform: translate(0, 15%);
+    }
+    .show-tr-prog-video {
+      transform: translate(0);
+    }
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  header {
+    padding: 2% 0;
+  }
+  main {
+    .home {
+      height: 150vh;
+    }
+    .program {
+      height: 250vh;
+    }
+    .calculate {
+      height: 185vh;
+    }
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  footer {
+    height: 125vh;
+    .footer-left {
+      margin-top: 3vh;
+    }
+    .footer-up {
+      .footer-right {
+        margin-bottom: 10vh;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  main {
+    .home {
+      height: 190vh;
+    }
+    .program {
+      height: 280vh;
+    }
+    .choose-us {
+      height: 200vh;
+    }
+    .calculate {
+      height: 225vh;
+    }
+  }
+
+  footer {
+    height: 155vh;
+    .footer-up {
+      .footer-right {
+        margin-bottom: 15vh;
       }
     }
   }

@@ -48,7 +48,9 @@ navBarExitButton.addEventListener("click", exitRightNavBar);
 navLinks.forEach((e) => e.addEventListener("click", exitRightNavBar));
 rightNavBarExitBackground.addEventListener("click", exitRightNavBar);
 
-// <=============================  NAV BAR SCROLL-TO =============================>
+// <=============================  SCROLL-TO =============================>
+// <=================  NAV BAR SCROLL-TO =================>
+
 const homeLink = document.querySelector(".nav-home");
 
 const scrollToHomePage = (e) => {
@@ -63,7 +65,14 @@ const programSection = document.querySelector(".program");
 const chooseUsLink = document.querySelector(".nav-choose-us");
 const chooseUsSection = document.querySelector(".choose-us");
 
-const footerServicesLinks = document.querySelectorAll(".footer-services-links");
+const footerFlexMuscle = document.querySelector(".footer-flex-link");
+const footerCardioExercise = document.querySelector(".footer-cardio-link");
+const footerBasicYoga = document.querySelector(".footer-yoga-link");
+const footerWeightLifting = document.querySelector(".footer-weight-link");
+const programFlexMuscle = document.querySelector(".flex-muscle");
+const programCardioExercise = document.querySelector(".cardio-exercise");
+const programBasicYoga = document.querySelector(".basic-yoga");
+const programWeightLifting = document.querySelector(".weight-lifting");
 
 const scrollToSectionOfPage = (e, section) => {
   e.preventDefault();
@@ -79,11 +88,21 @@ chooseUsLink.addEventListener("click", (e) =>
 );
 
 // <=================  FOOTER SCROLL-TO =================>
-footerServicesLinks.forEach((element) => {
-  element.addEventListener("click", (e) =>
-    scrollToSectionOfPage(e, programSection)
-  );
-});
+footerFlexMuscle.addEventListener("click", (e) =>
+  scrollToSectionOfPage(e, programFlexMuscle)
+);
+
+footerCardioExercise.addEventListener("click", (e) =>
+  scrollToSectionOfPage(e, programCardioExercise)
+);
+
+footerBasicYoga.addEventListener("click", (e) =>
+  scrollToSectionOfPage(e, programBasicYoga)
+);
+
+footerWeightLifting.addEventListener("click", (e) =>
+  scrollToSectionOfPage(e, programWeightLifting)
+);
 
 // <============================= NAV BAR REGISTER =============================>
 const registerButton = document.querySelector(".register-button");
@@ -116,6 +135,12 @@ const submitingRegisterForm = (e) => {
   const registerEmail = document.querySelector("#register-email");
   const registerMessage = document.querySelector(".register-message");
   const originalClassRegisterMessage = registerMessage.className;
+  const textRegisterInputs = document.querySelectorAll(".register-input");
+
+  textRegisterInputs.forEach(
+    (element) => (element.value = element.value.trim())
+  );
+  registerEmail.value = registerEmail.value.trim();
 
   if (
     firstName.value.trim() === "" ||
@@ -209,13 +234,16 @@ calculateBmiButton.addEventListener("click", calculateBmi);
 //
 //
 //
-// <============================= EMAIL INPUT =============================>
+// <============================= FOOTER EMAIL INPUT =============================>
 const subscribeButton = document.querySelector(".subscribe-button");
 const subscribing = (e) => {
   e.preventDefault();
   const emailInput = document.querySelector("#email");
   const subscribeMessage = document.querySelector(".subscribe-message");
   const originalClassEmail = subscribeMessage.className;
+
+  emailInput.value = emailInput.value.trim();
+
   if (regexEmail.test(emailInput.value)) {
     subscribeMessage.classList.add("correct-email");
     subscribeMessage.classList.remove("wrong-email");
